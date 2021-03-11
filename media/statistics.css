@@ -1,0 +1,38 @@
+.container_statistics{
+    margin: 40px auto;
+    width: 73%;
+}
+.container_analysis{
+    margin: 40px auto;
+    width: 73%;
+}
+#result{
+    height: auto;
+}
+.container_result_analysis{
+    margin:auto;
+}
+.result_statistics{
+    height: 500px;
+}
+.container_result_statistics{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card-scroll {
+    max-height:300px;
+}
+label {
+    margin-right: 15px;
+}
+
+.btn:focus, .btn:active {
+    box-shadow: none !important;
+}
+.statistics-list{
+    max-height: 300px;
+}
+.statistics-lst{
+    max-height: 200px;
+}

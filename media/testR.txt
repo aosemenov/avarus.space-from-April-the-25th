@@ -1,0 +1,16 @@
+Dataset: datasets/modsrc/new_yava_Myam_ksermokhina_2012_spp_modsrc.xlsx Columns: ['Ks_М-3006а', 'Ks_М-3006b']
+[1] NA
+Предупреждение:
+в результате преобразования созданы NA 
+
+	Pearson's product-moment correlation
+
+data:  t[[args[8]]] and t[[args[9]]]
+t = 1.7503, df = 96, p-value = 0.08326
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.02338246  0.36165567
+sample estimates:
+      cor 
+0.1758542 
+

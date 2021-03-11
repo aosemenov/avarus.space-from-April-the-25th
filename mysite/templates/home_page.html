@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+
+{% block content %}
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
+    <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+    <script src="../../media/groups.js" type="text/javascript"></script>
+    <script src="../../media/object_list.js" type="text/javascript"></script>
+    <script id="html-1" type="text/template">   // заметьте, что это НЕ javascript!
+    </script>
+    <style>
+   /* Оформление меню (конец)*/
+    .Preview .container{
+    height: 450px;
+    display:flex;
+    align-items: center;
+  }
+    .Preview{
+    width: 100%;
+    background-image: url(https://img1.goodfon.ru/wallpaper/nbig/d/31/arkticheskiy-belyak-zayac-zima.jpg);
+    background-size: cover;
+    background-position: center;
+}
+    .card{
+    background: #FFF;
+    box-shadow: 0px 0px 16px rgba(117, 117, 117, 0.2);
+    border-radius: 2px;
+}
+    h1{
+font-family: Roboto, sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 42px;
+margin-top:38px;
+
+}
+.card .info{
+    margin-top:62px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 48px;
+}
+.card .info button{
+    background: #262626;
+    border-radius: 16px;
+    border: none;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+.t1{
+
+font-family: Roboto, sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+color: #626262;
+}
+.t2{
+font-family: Roboto, sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: 15px;
+color:white
+}
+
+</style>
+    <div class="Preview">
+        <div class="container">
+            <div class="card col-xl-5 col-md-7 col-xs-12">
+                <h1 style="text-align: center;"> Веб-архив арктических экспедиций AVA</h1>
+                <div class="info">
+                    <div class="t1">Нажмите, чтобы открыть описание </div>
+                    <button type="button" class="t2">Подробности</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<div class="container2">
+    <div id="map"></div>
+</div>
+	{% placeholder "content" %}
+
+{% endblock content %}
+<footer class="mastfoot text-center" style="  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80px;">
+  <hr/>
+  {% static_placeholder "Footer" %}
+
+    <p>Designed for <a href="http://www.ras.ru/">The Russian Academy of Sciences</a>  by <a href="https://cabinet.miem.hse.ru/#/project/1">MIEM</a></p>
+    <p>Supported by RFBR 18-04-01010</p>
+
+
+</footer>
+

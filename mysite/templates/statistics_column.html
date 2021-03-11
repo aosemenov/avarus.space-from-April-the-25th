@@ -1,0 +1,69 @@
+
+{% extends "base.html" %}{% load cms_tags menu_tags sekizai_tags %} {% load i18n %}
+{% load cms_tags %}
+{% block content %}
+{% placeholder "content" %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../../media/statistics.css">
+</head>
+<body>
+<div class="container_statistics">
+    <div class="row justify-content-center">
+        <div style="display:block" id="result" class="col-xs-12
+                col-sm-12
+                col-md-12
+                col-lg-3">
+            <div  class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Statistics</h5>
+                    <p class="card-text">
+                        Select options from the list</p>
+                    <div  style="display:block" class="list-group" id="myTab" role="tablist">
+                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center disabled" data-bs-toggle="list"  role="tab">Datasets</a>
+                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" data-bs-toggle="list"  role="tab">Options</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card col-xs-12
+                col-sm-12
+                col-md-12
+                col-lg-5">
+            <div class="card-body">
+                <h5 class="card-title">Available parameters</h5>
+                <br>
+                <form action="{% url 'statistics-result' %}"  method='POST'>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input hidden value='{{ chosen_dataset }}' name="dataset" type="checkbox" checked>
+                        <input hidden value='{{ chosen_dataset_env }}' name="dataset_env" type="checkbox" checked>
+                        <label><b>Genus</b></label>
+                        <div class="list-group  statistics-list" style="overflow-y:scroll; overflow-x:hidden">
+                            {% for column in result_column %}
+                            <label class="list-group-item bg-light">
+                                <input class="form-check-input me-1" name="columns" type="checkbox" value="{{ column }}">{{ column }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                        <br>
+                        <label><b>Moisture</b></label>
+                        <div class="list-group statistics-list" style="overflow-y:scroll; overflow-x:hidden">
+                            {% for column in result_column_env %}
+                            <label class="list-group-item bg-light">
+                                <input class="form-check-input me-1" name="columns_env" type="checkbox" value="{{ column }}">{{ column }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <button type="submit" value="Submit" class="btn btn-outline-primary mt-2">Get Result</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+{% endblock content %}
+

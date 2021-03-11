@@ -1,0 +1,15 @@
+.emp-profile .row-head{
+    height: 180px;
+}
+
+ .round {
+    border-radius: 100px; /* Радиус скругления */
+    box-shadow: 0 0 7px #666; /* Параметры тени */
+   }
+
+ .profile-head .nav-tabs{
+         margin-top: 0px;
+ }
+ .profile-tab p a{
+     display:none;
+ }

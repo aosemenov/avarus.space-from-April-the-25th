@@ -1,0 +1,44 @@
+.container_result_analysis{
+    margin: 40px auto;
+    width: 73%;
+}
+.container_analysis{
+    margin: 40px auto;
+    width: 73%;
+}
+.card{
+    margin-bottom: 20px;
+}
+#id_Datasets{
+    list-style-type: none;
+}
+#id_Columns{
+    list-style-type: none;
+}
+.container_analysis_list{
+    margin: 40px auto;
+}
+.cor_list_available_datasets{
+    margin: 40px auto;
+}
+.dataset_detail{
+    margin: 40px auto;
+}
+.card-scroll {
+    max-height: 300px;
+}
+.btn:focus, .btn:active {
+  box-shadow: none !important;
+}
+.container_analysis_type{
+    padding: 0;
+}
+.card{
+    padding: 0 5px;
+}
+.result_statistics{
+    padding: 0px;
+}
+label {
+  margin-right: 15px;
+}

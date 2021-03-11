@@ -1,0 +1,11 @@
+.feedback{
+
+        position:fixed;
+        right: 10px;
+        top:70px;
+        width: 320px;
+        padding: 10px;
+        background-color: #3B3B3B;
+        border-radius: 12px;
+        color: white;
+}
