@@ -36,7 +36,7 @@ def module_col(ds):
     z = re.sub(r'"', r'', x)
     y = z.split()[1::2]
     y = y[3::]
-    
+
     return y
 
 
