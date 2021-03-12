@@ -5,7 +5,7 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('/', views.FeedBackView.as_view(), name='feedback_view'),
+    path('success/', views.FeedBackView.as_view(), name='feedback_view'),
     path('books/', views.BookListView.as_view(), name='books'),
     path('book/<int:pk>', views.BookDetailView.as_view(), name='book-detail'),
 ]

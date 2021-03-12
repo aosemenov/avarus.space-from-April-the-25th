@@ -83,6 +83,7 @@ class RequestsByUserListView(LoginRequiredMixin, generic.ListView):
 # FEED BACK
 from django.conf import settings
 
+
 class FeedBackView(View):
     def post(self, request):
         form = FeedBackForm(request.POST)
@@ -96,10 +97,11 @@ class FeedBackView(View):
             description = request.POST.get('description')
             messages.success(request, 'The request was sent successfully')
             send_mail(f'avarus.space от {user}', f'Запрос на доступ к {name_space} от {user} {organization} {position}.\nЦель запроса: {description}.\nEmail: {to}', settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER])
-            return redirect('/')
+            return render(request, 'index.html')
         else:
+            form = FeedBackForm()
             messages.success(request, 'Error form')
-            return redirect('/')
+            return render(request, 'index.html')
 
 
 # СТАТИСТИКА АНАЛИТИКА
