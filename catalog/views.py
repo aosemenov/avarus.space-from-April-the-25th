@@ -95,11 +95,11 @@ class FeedBackView(View):
             name_space = request.POST.get('name_space')
             description = request.POST.get('description')
             messages.success(request, 'The request was sent successfully')
-            print(to, name_space)
             send_mail(f'avarus.space от {user}', f'Запрос на доступ к {name_space} от {user} {organization} {position}.\nЦель запроса: {description}.\nEmail: {to}', settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER])
             return redirect('/')
         else:
-            return HttpResponse('Неверный запрос.')
+            messages.success(request, 'Error form')
+            return redirect('/')
 
 
 # СТАТИСТИКА АНАЛИТИКА
@@ -287,9 +287,3 @@ def get_column_comp(request):
             'chosen_dataset': request.session['chosen_dataset']})
     else:
         return render(request, 'R/comp.html')
-
-
-# def installR(request):
-#     x = library()
-#     print(x)
-#     return redirect('/')

@@ -150,21 +150,6 @@ def module(ds, columns):
     file.close()
     return x
 
-'''
-def library():
-    #command = 'Rscript'
-    #path2script = "scriptLibrariesInstallForRlang.r"
-    #cmd = [command, path2script]
-    try:
-        x = subprocess.check_output(cmd, universal_newlines=True, stderr=subprocess.STDOUT)
-        success = True
-    except subprocess.CalledProcessError as e:
-        x = e.output
-        success = True
-    return x
-'''
-
-
 def print_hi(name):
     print(f'Hi, {name}')
 
