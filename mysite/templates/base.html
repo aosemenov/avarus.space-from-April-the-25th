@@ -57,7 +57,7 @@
                 <a class="nav-link" href="{% url 'statistics_view' %}">Statistics</a>
                 <a class="nav-link" href="{% url 'index' %}">{% if user.profile.photo %} <img class="round" src="/media/{{ user.profile.photo }}" style="height:25px; width:25px" alt=""/>
                     {% else %} <img class="round" src="https://2004000.ru/common/i/empty_staff.png" style="height:25px; width:25px" alt=""/> {% endif %} {{ user.get_username }}</a>
-                <a class="nav-link" href="{% url 'logout'%}?next={{request.path}}">Exit</a>
+                <a class="nav-link" href="{% url 'logout'%}">Exit</a>
                 <div class="lang">
                     <img src="../../media/world.svg">
                     <select>
@@ -65,8 +65,8 @@
                     </select>
                 </div>
                 {% else %}
-                <a class="nav-link" href="{% url 'login'%}?next={{request.path}}">Login</a>
-                <a class="nav-link" href="{% url 'register'%}?next={{request.path}}">Sign In</a>
+                <a class="nav-link" href="{% url 'login'%}">Login</a>
+                <a class="nav-link" href="{% url 'register'%}">Sign In</a>
                 <div class="lang">
                     <img src="../../media/world.svg">
                     <select>

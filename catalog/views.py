@@ -27,12 +27,12 @@ def index(request):
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)
         return render(request,
-                      'index.html',
+                      'catalog/index.html',
                       {'user_form': user_form,
                        'profile_form': profile_form})
 
     return render(request,
-                  'index.html',
+                  'catalog/index.html',
                   {'user_form': user_form,
                    'profile_form': profile_form})
 
@@ -54,7 +54,6 @@ class LoanedBooksByUserListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 10
 
     def get_queryset(self):
-
         return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o').order_by('book')
 
 
@@ -97,11 +96,11 @@ class FeedBackView(View):
             description = request.POST.get('description')
             messages.success(request, 'The request was sent successfully')
             send_mail(f'avarus.space от {user}', f'Запрос на доступ к {name_space} от {user} {organization} {position}.\nЦель запроса: {description}.\nEmail: {to}', settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER])
-            return render(request, 'index.html')
+            return render(request, 'catalog/index.html')
         else:
             form = FeedBackForm()
             messages.success(request, 'Error form')
-            return render(request, 'index.html')
+            return render(request, 'catalog/index.html')
 
 
 # СТАТИСТИКА АНАЛИТИКА
@@ -122,7 +121,7 @@ def analysis_view(request):
 
 class StatisticsLoanedDatasetsByUserLIstView(LoginRequiredMixin, generic.ListView):
     model = BookInstance
-    template_name = 'statistics.html'
+    template_name = 'catalog/statistics.html'
     paginate_by = 10
     def get_queryset(self):
         return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o')
@@ -206,13 +205,13 @@ def get_column_statistics(request):
         request.session['chosen_dataset'] = ds_1
         request.session['chosen_dataset_env'] = ds_2
 
-        return render(request, template_name='statistics_column.html', context={
+        return render(request, template_name='catalog/statistics_column.html', context={
             'result_column': request.session['result_column'],
             'result_column_env': request.session['result_column_env'],
             'chosen_dataset': request.session['chosen_dataset'],
             'chosen_dataset_env': request.session['chosen_dataset_env']})
     else:
-        return render(request, 'statistics.html')
+        return render(request, 'catalog/statistics.html')
 
 
 def get_name_statistics(request):
@@ -258,11 +257,11 @@ def get_name_statistics(request):
         print('The file is successfully moved to another destination')
         request.session['result'] = some_result
         request.session['result_env'] = some_result_env
-        return render(request, template_name='statistics_result.html', context={'result': request.session['result'],
+        return render(request, template_name='catalog/statistics_result.html', context={'result': request.session['result'],
                                                                                 'result_env': request.session[
                                                                                     'result_env']})
     else:
-        return render(request, 'statistics_column.html')
+        return render(request, 'catalog/statistics_column.html')
 
 
 def get_column(request):

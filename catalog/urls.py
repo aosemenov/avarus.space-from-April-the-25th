@@ -16,9 +16,6 @@ urlpatterns += [
     path('myrequests/', views.RequestsByUserListView.as_view(), name='my-requests'),
 ]
 
-# CТАТИСТИКА
-
-
 urlpatterns += [
     path('analysis/', views.analysis_view, name='analysis_view'),
     path('cor/', views.LoanedDatasetsByUserListView.as_view(), name='cor-analysis'),

@@ -28,37 +28,17 @@ urlpatterns += i18n_patterns(
     re_path(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
 )
 urlpatterns += staticfiles_urlpatterns()
-# This is only needed when using runserver.
-if settings.DEBUG:
-    urlpatterns = [
-        url(r'^media/(?P<path>.*)$', serve,
-            {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-        ] + staticfiles_urlpatterns() + urlpatterns
 
-#Add Django site authentication urls (for login, logout, password management)
-urlpatterns += [
-    path('account/', include('django.contrib.auth.urls')),
-
-]
 urlpatterns += [
     path('admin/', admin.site.urls),
     path('', include('accounts.urls')),
     path('profile/', include('catalog.urls')),
-    # path('analysis/', include('R.urls')),
-
-
-
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-#from django.views.generic import RedirectView
-#urlpatterns += [
-#    path('', RedirectView.as_view(url='/catalog/', permanent=True)),]
 
 
-# Используйте static() чтобы добавить соотношения для статических файлов
-# Только на период разработки
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

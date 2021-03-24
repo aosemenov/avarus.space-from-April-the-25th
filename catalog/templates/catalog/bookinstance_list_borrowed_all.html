@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<    <style>
+        table tbody {counter-reset: rowNumber;}
+        table tbody tr {counter-increment: rowNumber;}
+        table tbody tr th:first-child::after {content: counter(rowNumber);}
+    </style>
+<div class="container emp-profile">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="profile-work">
+                                        {% if   user.is_authenticated %}
+                                        <p>HOME</p>
+                                        <a href="{% url 'index' %}">Profile</a>
+
+                                        <p>RECEIVED DATASETS</p>
+
+                                        <a href="{% url 'my-borrowed' %}">My Datasets</a><br/>
+                                        <a href="{% url 'my-requests' %}">My Requests</a><br/>
+                                          {% endif %}
+                                        {% if user.is_staff %}
+                                        <p>STAFF</p>
+                                        {% if perms.catalog.can_mark_returned %}
+                                        <a href="{% url 'books' %}">All Datasets</a><br/>
+                                        <a href="{% url 'all-borrowed' %}">All Borrowed</a><br/>
+                                        {% endif %}
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+  <div class="col-md-10">
+       <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">№</th>
+                  <th scope="col">Dataset name</th>
+                  <th scope="col">User (login)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% if bookinstance_list %}{% for bookinst in bookinstance_list %}
+                <tr>
+                  <th scope="row"></th>
+                  <td><a href="{% url 'book-detail' bookinst.book.pk %}">{{bookinst.book.title}}</a></td>
+                  <td>{% if user.is_staff %} {{ bookinst.borrower }}{% endif %}</td>
+                </tr>
+                  {% endfor %}
+              </tbody>
+                </table>
+
+                {% else %}
+                  <p class="text-success">There are no datasets borrowed</p>
+                {% endif %}
+  </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+

@@ -1,5 +1,6 @@
 import os  # isort:skip
 from django.contrib.messages import constants as messages
+
 gettext = lambda s: s
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
@@ -19,7 +20,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -31,23 +31,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
-
-
-
 
 
 ROOT_URLCONF = 'mysite.urls'
 
-
-
 WSGI_APPLICATION = 'mysite.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
 
 
 # Password validation
@@ -75,7 +67,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
@@ -94,7 +85,7 @@ LOGIN_REDIRECT_URL = '/'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'mysite', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'accounts', 'templates')],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -116,7 +107,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 MIDDLEWARE = [
     'cms.middleware.utils.ApphookReloadMiddleware',
@@ -231,10 +221,19 @@ DATABASES = {
         'NAME': 'project.db',
         'PASSWORD': '',
         'PORT': '',
-        'USER': ''
+        'USER': '',
+
+    },
+    'users': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'localhost',
+        'NAME': 'ava',
+        'PASSWORD': 'pjkjnjtz,kjrj',
+        'PORT': '5432',
+        'USER': 'postgres',
     }
 }
-
+DATABASE_ROUTERS = ['accounts.routers.DjangoRouter', 'accounts.routers.MyApp2Router', 'catalog.routers.CatalogRouter']
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
@@ -250,9 +249,9 @@ EMAIL_HOST_PASSWORD = "avaruspaceadmin"
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 MESSAGE_TAGS = {
-        messages.DEBUG: 'alert-secondary',
-        messages.INFO: 'alert-info',
-        messages.SUCCESS: 'alert-success',
-        messages.WARNING: 'alert-warning',
-        messages.ERROR: 'alert-danger',
- }
+    messages.DEBUG: 'alert-secondary',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
