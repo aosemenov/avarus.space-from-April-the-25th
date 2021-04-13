@@ -1,5 +1,4 @@
-Dataset: datasets/env/new_yava_Geofiz_ksermokhina_2012_env_fortv_full_header.xlsx Columns: ['COV_TSHRUB', 'COV_DSHRUB']
-Ошибка в prcomp.default(na.omit(data), scale = TRUE) :
-  не могу отмасштабировать постоянную/нулевую колонку с единичной дисперсией
-Вызовы: prcomp -> prcomp.default
+Dataset: datasets/env/new_yava_Bovan_ksermokhina_2005_env_fortv_full_header.xlsx Columns: ['SHAPE', 'COVERSCALE']
+Ошибка в colMeans(x, na.rm = TRUE) :'x' должен быть числом
+Вызовы: prcomp ... prcomp.default -> scale -> scale.default -> colMeans
 Выполнение остановлено

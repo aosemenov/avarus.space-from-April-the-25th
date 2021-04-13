@@ -1,6 +1,6 @@
 from django.contrib import admin
-
-
+from django.db import models
+from modeltranslation.admin import TranslationAdmin
 from .models import Author, Book, BookInstance, FeedBack, Profile
 
 
@@ -12,7 +12,8 @@ admin.site.register(Profile, ProfileAdmin)
 
 
 
-class AuthorAdmin(admin.ModelAdmin):
+class AuthorAdmin(TranslationAdmin):
+
     list_display = ('first_name', 'last_name')
     fields = ['first_name', 'last_name']
 

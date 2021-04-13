@@ -124,6 +124,7 @@ MIDDLEWARE = [
 ]
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django_filters',
     'djangocms_admin_style',
     'django.contrib.auth',
@@ -169,20 +170,24 @@ INSTALLED_APPS = [
 ]
 
 LANGUAGES = (
-    ## Customize this
     ('en', gettext('EN')),
+    ('ru', gettext('RU')),
 )
-# месторасположение файлов перевода
-LOCALE_PATHS = (
-    'locale',
-    # os.path.join(PROJECT_DIR, 'locale'),
-)
+
+LOCALE_PATHS = (BASE_DIR, 'locale/', )
+
 CMS_LANGUAGES = {
-    ## Customize this
     1: [
         {
             'code': 'en',
             'name': gettext('EN'),
+            'redirect_on_fallback': True,
+            'public': True,
+            'hide_untranslated': False,
+        },
+        {
+            'code': 'ru',
+            'name': gettext('RU'),
             'redirect_on_fallback': True,
             'public': True,
             'hide_untranslated': False,
@@ -205,6 +210,7 @@ CMS_TEMPLATES = (
     ('analysis.html', 'Analysis'),
     ('index.html', 'Profile'),
     ('catalog/datasets_requests.html', 'Datasets_Requests'),
+    ('instructions.html', 'Instructions')
 )
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -213,6 +219,7 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 SESSION_SAVE_EVERY_REQUEST = True
+
 DATABASES = {
     'default': {
         'CONN_MAX_AGE': 0,
@@ -227,7 +234,7 @@ DATABASES = {
     'users': {
         'ENGINE': 'django.db.backends.postgresql',
         'HOST': 'localhost',
-        'NAME': 'ava',
+        'NAME': 'ava2',
         'PASSWORD': 'pjkjnjtz,kjrj',
         'PORT': '5432',
         'USER': 'postgres',

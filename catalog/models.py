@@ -8,7 +8,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.db import models
 from django.conf import settings
-
+from django.utils.translation import gettext as _
 # ПРОФИЛЬ
 
 
@@ -35,7 +35,7 @@ class Book(models.Model):
     title = models.CharField(max_length=200, blank=True, null=True)
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True, blank=True)
     summary = models.TextField(max_length=1000, help_text="Enter a brief description of the book", blank=True)
-    specifications = models.FileField(upload_to='')
+    specifications = models.FileField(upload_to='upload_datasets')
     dataset = models.CharField(max_length=200, blank=True, )
     dataset_env = models.CharField(blank=True, max_length=200)
 

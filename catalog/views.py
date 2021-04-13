@@ -2,7 +2,7 @@ from django.conf.global_settings import DEFAULT_FROM_EMAIL
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail, BadHeaderError
 from django.db import transaction
-from django.http import HttpResponse
+from django.http import HttpResponse, request
 from .models import Book, Author, BookInstance, FeedBack
 from django.shortcuts import render, redirect
 from .forms import FeedBackForm
@@ -12,6 +12,8 @@ from django.conf import settings
 from mysite import settings
 from django.views import generic
 from .forms import UserEditForm, ProfileEditForm
+
+
 
 
 @login_required
@@ -35,6 +37,18 @@ def index(request):
                   'catalog/index.html',
                   {'user_form': user_form,
                    'profile_form': profile_form})
+
+
+
+def AboutView(request):
+    if request.method == 'POST':
+        username = request.POST['name']
+        email = request.POST.getlist('email')
+        message = request.POST.get('message')
+        send_mail(f'Обратная связь от {username}',
+                  f'{ message }.\nEmail: {email}',
+                  settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER])
+    return render(request, 'catalog/about.html')
 
 
 class BookListView(generic.ListView):

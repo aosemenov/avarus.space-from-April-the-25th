@@ -35,5 +35,8 @@ urlpatterns += [
     path('statistics-column/', views.get_column_statistics, name='statistics-column'),
     path('statistics-result/', views.get_name_statistics, name='statistics-result'),
 ]
+urlpatterns += [
+    path('about/', views.AboutView, name='about'),
+]
 
 

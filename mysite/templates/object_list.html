@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load cms_tags menu_tags sekizai_tags %}
+{% load cms_tags menu_tags sekizai_tags %} {% load i18n %}
 
 {% render_block "css" %}
 
@@ -17,23 +17,42 @@
 
 
     <style>
-        html,
-        body {
-
-            height: 460px;
+        .map-box {
+            right: 20px;
+            position: absolute;
+            align-items: center;
+            background-color: white;
+            height: 44px;
+            border-radius: 50px;
+            padding: 10px;
+            top: 110px;
+            transition: all 0.2s;
+        }
+        .map-box-btn.map-active {
+            transform: rotate(-45deg);
+        }
+        .map-box-btn {
+            background-image: url("../static/map.svg");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2f3640;
+            width: 24px;
+            height: 24px;
+            background-color: white;
+            text-decoration: none;
         }
         .search-box {
-            right:20px;
+            right:80px;
             display: flex;
             position: absolute;
             align-items: center;
             background-color: white;
-            height: 40px;
-            border-radius: 40px;
+            height: 44px;
+            border-radius: 50px;
             padding: 10px;
-            top: 90px;
+            top: 110px;
         }
-
         .search-btn {
             background-image: url("../static/magnifying-glass.png");
             display: flex;
@@ -45,7 +64,6 @@
             background-color: white;
             text-decoration: none;
         }
-
         .search-txt {
             border: none;
             outline: none;
@@ -59,27 +77,21 @@
         }
 
         .search-box:hover .search-txt {
-            width: 255px;
+            width: 195px;
             padding: 0 6px;
-        }
-
-        .search-box:hover .search-btn {
-
-
         }
 
         .menu {
             resize: both;
-            overflow: auto;
+            overflow: overlay;
             height: 460px;
             width: 300px;
             position: absolute; /* Фиксированное положение */
             right: 20px; /* Расстояние от правого края окна браузера */
             padding: 1px; /* Поля вокруг текста */
-            top: 143px;
+            top: 163px;
             background: white; /* Цвет фона */
             border-radius: 8px;
-
         }
         #map {
             position: relative;
@@ -93,12 +105,11 @@
             overflow: auto;
             list-style: none;
             text-align: left;
-            padding-right: 8px; /*отступ текста в меню*/
+            padding: 8px; /*отступ текста в меню*/
 
         }
         .menuItem{
             text-align:center;
-
         }
         .submenu li {
             overflow: hidden;
@@ -125,8 +136,6 @@
         .submenu li.hide{
             display: none;
         }
-
-
         .menuItem
         {
 
@@ -142,10 +151,48 @@
 
             direction: ltr;
         }
+        .resize{
+            visibility: hidden;
+            opacity: 0;
+        }
+        .resize.map-active{
+            visibility: visible;
+            opacity: 1;
+            transition: all 0.2s linear;
+        }
+
+        @media screen and (max-width:970px) {
+            .search-box{
+                display: none;
+            }
+            .map-box {
+                top: 135px;
+            }
+            .menu{
+                top: 190px;
+
+            }
+
+        }
 
     </style>
 </head>
 <body>
+<div class="header-footer header-footer_hidden">
+    <div class="header-footer__search-form">
+        {% trans "Search " as the_search %}
+        <form class="search-form">
+            <input class="search-form__input search-form__input_position_footer" id="elastic_mobile" type="text" placeholder="{{ the_search }}">
+            <div class="search-form__icon search-form__icon-position_footer">
+                <a class="search-form__icon-link" href="#">
+                    <svg class="search-form__icon-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 20L15.0962 15.0962M15.0962 15.0962C16.2725 13.9199 17 12.2949 17 10.5C17 6.91015 14.0899 4 10.5 4C6.91015 4 4 6.91015 4 10.5C4 14.0899 6.91015 17 10.5 17C12.2949 17 13.9199 16.2725 15.0962 15.0962Z" stroke="#768298" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
 
 <div class="container2">
     <div id="map"></div>
@@ -153,17 +200,20 @@
 
 <div class="resize">
     <div class="menu_list" id="menu_list">
-
     </div>
-
 </div>
 
 
 <div class="search-box">
-    <input type="text" class="search-txt" id="elastic" placeholder="Search">
+    {% trans "Search" as the_search %}
+    <input type="text" class="search-txt" id="elastic" placeholder="{{ the_search }}">
     <a href="#" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
 </div>
+<div class="map-box">
+    <a href="" class="map-box-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+</div>
 </body>
+
 <footer class="mastfoot text-center" style="
   left: 0;
   bottom: 20px;
@@ -172,8 +222,8 @@
     <hr/>
     {% static_placeholder "Footer" %}
 
-    <p>Designed for <a href="http://www.ras.ru/">The Russian Academy of Sciences</a>  by <a href="https://cabinet.miem.hse.ru/#/project/1">MIEM</a></p>
-    <p>Supported by RFBR 18-04-01010</p>
+    <p>{% trans "Designed for" %} <a href="http://www.ras.ru/">{% trans "The Russian Academy of Sciences" %}</a>  {% trans "by" %} <a href="https://cabinet.miem.hse.ru/#/project/1">{% trans "MIEM" %}</a></p>
+    <p>{% trans "Supported by" %} RFBR 18-04-01010</p>
 
 
 </footer>

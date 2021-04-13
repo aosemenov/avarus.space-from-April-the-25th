@@ -1,15 +1,36 @@
-// function checkParams_statistics_analysis() {
-//     const dataset = $('#dataset').val();
-//     if( dataset.length !== 0 ) {
-//         $('#submit').removeAttr('disabled');
-//     } else {
-//         $('#submit').attr('disabled', 'disabled');
-//     }
-// }
+$('.mobile-menu').on('click', function (e){
+    e.preventDefault();
+    $('.menu-btn').toggleClass('menu-active')
+    $('.nav-panel').toggleClass('menu-active')
+})
 
-// document.querySelectorAll('#dataset').forEach((element) => {
-//     element.addEventListener('click', () => {
-//         const count = document.querySelectorAll('input:checked').length;
-//         if (count === 1) document.querySelector('#submit').classList.remove('disabled');
-//     })
-// });
+
+$('.map-box').on('click', function (e){
+    e.preventDefault();
+    $('.map-box-btn').toggleClass('map-active')
+    $('.resize').toggleClass('map-active')
+})
+$('.subItem .button').on('click', function (e){
+    e.preventDefault();
+    $('.resize').toggleClass('map-move')
+})
+    document.querySelector('#elastic_statistics').oninput = function () {
+        let val = this.value.trim();
+        let elasticItems = document.querySelectorAll('.list-group-item__statistics-column');
+        if (val) {
+            elasticItems.forEach(function (elem) {
+                if (elem.innerText.search(val) == -1) {
+                    elem.style.display = "none";
+                    // elem.innerHTML = elem.innerText;
+                } else {
+                    elem.style.display = "block";
+                    let str = elem.innerText;
+                }
+            });
+        } else {
+            elasticItems.forEach(function (elem) {
+                    elem.style.display = "block";
+                }
+            );
+        }
+    }

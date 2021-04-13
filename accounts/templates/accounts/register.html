@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 
@@ -71,7 +72,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="user_card">
 			<div class="d-flex justify-content-center">
-				<h3 id="form-title">REGISTER ACCOUNT</h3>
+				<h3 id="form-title">{% trans "REGISTER ACCOUNT" %}</h3>
 			</div>
 			<div class="d-flex justify-content-center form_container">
 
@@ -102,7 +103,8 @@
 						{{form.password2}}
 					</div>
 					<div class="d-flex justify-content-center mt-3 login_container">
-						<input class="btn login_btn" type="submit" value="Register Account">
+						{% trans "Register Account" as the_register_account %}
+						<input class="btn login_btn" type="submit" value="{{ the_register_account }}">
 					</div>
 				</form>
 			</div>
@@ -110,19 +112,24 @@
 			<div class="d-flex justify-content-center">{{message_error}}</div>
 			<div class="mt-4">
 				<div class="d-flex justify-content-center links">
-					Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
+					{% trans "Already have an account?" %} <a href="{% url 'login' %}" class="ml-2">{% trans "Sign In" %}</a>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+{% trans "Username.." as the_register_name %}
+{% trans "Email.." as the_email_name %}
+{% trans "Enter password..." as the_password_name %}
+{% trans "Re-enter Password..." as the_repassword_name %}
+
 <script>
 
 	var form_fields = document.getElementsByTagName('input')
-	form_fields[1].placeholder='Username..';
-	form_fields[2].placeholder='Email..';
-	form_fields[3].placeholder='Enter password...';
-	form_fields[4].placeholder='Re-enter Password...';
+	form_fields[1].placeholder='{{ the_register_name }}';
+	form_fields[2].placeholder='{{ the_email_name }}';
+	form_fields[3].placeholder='{{ the_password_name }}';
+	form_fields[4].placeholder='{{ the_repassword_name }}';
 	for (var field in form_fields){
 		form_fields[field].className += ' form-control'
 	}

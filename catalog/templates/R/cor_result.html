@@ -11,25 +11,25 @@
         <div class="col-xs-12
                 col-sm-12
                 col-md-12
-                col-lg-3">
+                col-lg-4">
             <div   class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Correlation Analysis</h5>
+                    <h5 class="card-title">{% trans "Correlation Analysis" %}</h5>
                     <p class="card-text"></p>
                     <br>
-                    <a  class="btn btn-primary mt-2" href="{% url 'statistics_view' %}">Back</a>
+                    <a  class="btn btn-primary mt-2" href="{% url 'statistics_view' %}">{% trans "Back" %}</a>
                 </div>
             </div>
         </div>
         <div id="result_statistics" class="result_statistics col-xs-12
                 col-sm-12
                 col-md-12
-                col-lg-5">
+                col-lg-7">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Result</h5>
+                    <h5 class="card-title">{% trans "Result" %}</h5>
                     <p class="card-text">{{ result|linebreaks }}</p>
-                    <a type="submit" value="Submit" class="btn  btn-outline-primary  mt-2" href="../../../media/testR.txt" download>Download txt</a>
+                    <a type="submit" value="Submit" class="btn  btn-outline-primary  mt-2" href="../../../media/testR.txt" download>{% trans "Download .txt" %}</a>
                 </div>
                 <br>
             </div>

@@ -1,15 +1,42 @@
 .emp-profile .row-head{
     height: 180px;
 }
+.emp-profile{
+    min-height: 500px;
+    height: 100%;
 
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
  .round {
     border-radius: 100px; /* Радиус скругления */
     box-shadow: 0 0 7px #666; /* Параметры тени */
    }
-
+.profile-work{
+    padding: 0;
+}
  .profile-head .nav-tabs{
-         margin-top: 0px;
+         margin-top: 0;
  }
  .profile-tab p a{
      display:none;
  }
+.emp-profile{
+    width: 100%;
+}
+.profile-head__avatar{
+    display:flex;
+
+}
+@media screen and (max-width:768px) {
+    .profile-work a {
+        text-decoration: none;
+        color: #495057;
+        font-weight: 600;
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:576px) {
+   .profile-work{display:none;}
+
+}

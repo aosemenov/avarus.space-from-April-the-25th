@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import CreateUserForm
-
+from django.utils.translation import gettext as _
 
 def registerPage(request):
     if request.user.is_authenticated:
@@ -23,10 +23,11 @@ def registerPage(request):
                 return redirect('login')
             else:
                 form = CreateUserForm()
-                message = 'The passwords are different! OR'
-                message_error = 'The minimum password length is 5 symbols!'
+                message = _("The passwords are different! OR")
+                message_error = _("The minimum password length is 5 symbols!")
                 context = {'form': form, 'message': message, 'message_error': message_error}
                 return render(request, 'accounts/register.html', context)
+
 
         context = {'form': form}
         return render(request, 'accounts/register.html', context)
