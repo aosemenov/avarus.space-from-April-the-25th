@@ -50,9 +50,11 @@ def AboutView(request):
                   settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER])
     return render(request, 'catalog/about.html')
 
+def DatasetsView(request):
+    bookinstance_list = BookInstance.objects.filter(borrower=request.user).filter(status__exact='o').order_by('book')
+    book_list = Book.objects.filter(status='pu')
+    return render(request, 'catalog/bookinstance_list_borrowed_user.html', {'book_list': book_list, 'bookinstance_list':bookinstance_list})
 
-class BookListView(generic.ListView):
-    model = Book
 
 
 class BookDetailView(generic.DetailView):
@@ -61,14 +63,6 @@ class BookDetailView(generic.DetailView):
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-
-class LoanedBooksByUserListView(LoginRequiredMixin, generic.ListView):
-    model = BookInstance
-    template_name = 'catalog/bookinstance_list_borrowed_user.html'
-    paginate_by = 10
-
-    def get_queryset(self):
-        return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o').order_by('book')
 
 
 # Added as part of challenge!
@@ -133,30 +127,30 @@ def analysis_view(request):
         return render(request, 'R/analysis.html')
 
 
-class StatisticsLoanedDatasetsByUserLIstView(LoginRequiredMixin, generic.ListView):
-    model = BookInstance
-    template_name = 'catalog/statistics.html'
-    paginate_by = 10
-    def get_queryset(self):
-        return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o')
+def StatisticsDatasetsView(request):
+    bookinstance_list = BookInstance.objects.filter(borrower=request.user).filter(status__exact='o').order_by('book')
+    book_list = Book.objects.filter(status='pu')
+    return render(request, 'catalog/statistics.html', {'book_list': book_list, 'bookinstance_list': bookinstance_list})
 
+def FactorDatasetsView(request):
+    bookinstance_list = BookInstance.objects.filter(borrower=request.user).filter(status__exact='o').order_by('book')
+    book_list = Book.objects.filter(status='pu')
+    return render(request, 'R/factor.html', {'book_list': book_list, 'bookinstance_list': bookinstance_list})
 
-class CompLoanedDatasetsByUserListView(LoginRequiredMixin, generic.ListView):
-    model = BookInstance
-    template_name = 'R/comp.html'
-    paginate_by = 10
+def CompDatasetsView(request):
+    bookinstance_list = BookInstance.objects.filter(borrower=request.user).filter(status__exact='o').order_by('book')
+    book_list = Book.objects.filter(status='pu')
+    return render(request, 'R/comp.html', {'book_list': book_list, 'bookinstance_list': bookinstance_list})
 
-    def get_queryset(self):
-        return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o')
+def JacquardDatasetsView(request):
+    bookinstance_list = BookInstance.objects.filter(borrower=request.user).filter(status__exact='o').order_by('book')
+    book_list = Book.objects.filter(status='pu')
+    return render(request, 'R/jaccar.html', {'book_list': book_list, 'bookinstance_list': bookinstance_list})
 
-
-class LoanedDatasetsByUserListView(LoginRequiredMixin, generic.ListView):
-    model = BookInstance
-    template_name = 'R/cor.html'
-    paginate_by = 10
-
-    def get_queryset(self):
-        return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o')
+def CorDatasetsView(request):
+    bookinstance_list = BookInstance.objects.filter(borrower=request.user).filter(status__exact='o').order_by('book')
+    book_list = Book.objects.filter(status='pu')
+    return render(request, 'R/cor.html', {'book_list': book_list, 'bookinstance_list': bookinstance_list})
 
 
 class DatasetDetailView(generic.DetailView):
@@ -272,8 +266,8 @@ def get_name_statistics(request):
         request.session['result'] = some_result
         request.session['result_env'] = some_result_env
         return render(request, template_name='catalog/statistics_result.html', context={'result': request.session['result'],
-                                                                                'result_env': request.session[
-                                                                                    'result_env']})
+                                                                                        'result_env': request.session[
+                                                                                            'result_env']})
     else:
         return render(request, 'catalog/statistics_column.html')
 
@@ -302,3 +296,51 @@ def get_column_comp(request):
             'chosen_dataset': request.session['chosen_dataset']})
     else:
         return render(request, 'R/comp.html')
+
+def get_column_factor(request):
+    if request.method == 'POST':
+        datasets = request.POST['dataset']
+        some_result = module_col_factor(datasets)
+        request.session['result_column'] = some_result
+        request.session['chosen_dataset'] = datasets
+        return render(request, template_name='R/factor_column.html', context={
+            'result_column': request.session['result_column'],
+            'chosen_dataset': request.session['chosen_dataset']})
+    else:
+        return render(request, 'R/factor.html')
+
+
+def get_name_factor(request):
+    if request.method == 'POST':
+        datasets = request.POST['dataset']
+        columns = request.POST.getlist('columns')
+        length = str(len(columns))
+        some_result = module_factor(datasets, length, columns)
+        request.session['result'] = some_result
+        return render(request, template_name='R/factor_result.html', context={'result': request.session['result']})
+    else:
+        return render(request, 'R/factor_column.html')
+
+def get_name_jacquard(request):
+    if request.method == 'POST':
+        datasets = request.POST['dataset']
+        some_result = module_jacquard(datasets)
+        import shutil
+        source = 'Rplots.pdf'
+        dest = 'media/Rplots.pdf'
+        try:
+            dest = shutil.move(source, dest)
+            print("File is moved successfully to: ", dest)
+        except IsADirectoryError:
+            print("Source is a file but destination is a directory.")
+        except NotADirectoryError:
+            print("Source is a directory but destination is a file.")
+        except PermissionError:
+            print("Operation not permitted.")
+        except OSError as error:
+            print(error)
+        print('The file is successfully moved to another destination')
+        request.session['result'] = some_result
+        return render(request, template_name='R/jaccar_result.html', context={'result': request.session['result']})
+    else:
+        return render(request, 'R/jaccar.html')

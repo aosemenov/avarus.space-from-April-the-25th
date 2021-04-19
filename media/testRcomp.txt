@@ -1,4 +1,9 @@
-Dataset: datasets/env/new_yava_Bovan_ksermokhina_2005_env_fortv_full_header.xlsx Columns: ['SHAPE', 'COVERSCALE']
-Ошибка в colMeans(x, na.rm = TRUE) :'x' должен быть числом
-Вызовы: prcomp ... prcomp.default -> scale -> scale.default -> colMeans
-Выполнение остановлено
+Dataset: datasets/env/new_yava_Bovan_ksermokhina_2005_env_fortv_full_header.xlsx Columns: ['COV_SHRUBS', 'COV_MOSS']
+Standard deviations (1, .., p=2):
+[1] 1.1520905 0.8201752
+
+Rotation (n x k) = (2 x 2):
+                 PC1        PC2
+COV_SHRUBS 0.7071068  0.7071068
+COV_MOSS   0.7071068 -0.7071068
+Было 24 предупреждения (введите warnings() чтобы их просмотреть)

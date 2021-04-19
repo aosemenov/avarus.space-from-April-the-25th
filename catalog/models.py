@@ -32,12 +32,19 @@ class Profile(models.Model):
 
 
 class Book(models.Model):
+    LOAN_STATUS = (
+        ('pu', 'Public'),
+        ('pr', 'Private')
+
+    )
     title = models.CharField(max_length=200, blank=True, null=True)
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True, blank=True)
     summary = models.TextField(max_length=1000, help_text="Enter a brief description of the book", blank=True)
     specifications = models.FileField(upload_to='upload_datasets')
     dataset = models.CharField(max_length=200, blank=True, )
     dataset_env = models.CharField(blank=True, max_length=200)
+    status = models.CharField(max_length=5, choices=LOAN_STATUS, blank=True, default='pr', help_text='Book availability')
+
 
     def __str__(self):
         return self.title

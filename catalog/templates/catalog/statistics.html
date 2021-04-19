@@ -12,13 +12,13 @@
 <body>
 <div class="container-dictionary">
     <div  class="card">
-                <div class="card-body">
-                    <h6 class="card-title">{% trans "AVA Data Dictionary" %}</h6>
-                    <p class="card-text-dictionary">
-                        {% trans "The dictionary contains a transcript of the names in the datasets" %}
-                    </p>
-                    <a type="submit" value="Submit" class="button-dictionary btn btn-xs btn-outline-success mt-0" href="/media/upload_datasets/ava_ak_headerdata_database_dictionary.xlsx" download>{% trans "Download" %}</a>
-                </div>
+        <div class="card-body">
+            <h6 class="card-title">{% trans "AVA Data Dictionary" %}</h6>
+            <p class="card-text-dictionary">
+                {% trans "The dictionary contains a transcript of the names in the datasets" %}
+            </p>
+            <a type="submit" value="Submit" class="button-dictionary btn btn-xs btn-outline-success mt-0" href="/media/upload_datasets/ava_ak_headerdata_database_dictionary.xlsx" download>{% trans "Download" %}</a>
+        </div>
     </div>
 </div>
 <div class="container_statistics">
@@ -45,12 +45,18 @@
                 col-lg-6">
             <div class="card-body">
                 <h5 class="card-title">{% trans "Available datasets" %}</h5>
-                {% if bookinstance_list %}
+                {% if book_list or bookinstance_list %}
                 <form action="{% url 'statistics-column' %}"  method='POST'>
                     {% csrf_token %}
                     <div class="list-group statistics-lst" style="overflow-y:scroll; overflow-x:hidden">
+                        {% for book in book_list %}
+                        <label  class="list-group-item ">
+                            <input class="form-check-input me-1" name="dataset" type="radio" checked
+                                   value="{{book.dataset}} {{book.dataset_env}}">{{book.title}}
+                        </label>
+                        {% endfor %}
                         {% for datasetinst in bookinstance_list %}
-                        <label class="list-group-item bg-light">
+                        <label class="list-group-item ">
                             <input class="form-check-input me-1" id="dataset" name="dataset" type="radio" checked
                                    value="{{datasetinst.book.dataset}} {{datasetinst.book.dataset_env}}">{{datasetinst.book.title}}
                         </label>
@@ -115,7 +121,7 @@
                             <p class="card-text">{% trans "Here's a description of the analysis." %}</p>
                             <label><b>{% trans "Type of analysis" %}:</b> {% trans "Factor" %}</label>
                             <br>
-                            <button disabled class="btn btn-outline-danger mt-2">{% trans "Get Analysis" %}</button>
+                            <a  class="btn btn-outline-danger mt-2" href="{% url 'factor-analysis' %}">{% trans "Get Analysis" %}</a>
                         </div>
                     </div>
                 </div>
@@ -126,7 +132,7 @@
                             <p class="card-text">{% trans "Here's a description of the analysis." %}</p>
                             <label><b>{% trans "Type of analysis" %}:</b> {% trans "Cluster" %}</label>
                             <br>
-                            <button disabled class="btn btn-outline-danger mt-2">{% trans "Get Analysis" %}</button>
+                            <a class="btn btn-outline-danger mt-2" href="{% url 'jacquard-analysis' %}">{% trans "The Jacquard method" %}</a>
                         </div>
                     </div>
                 </div>

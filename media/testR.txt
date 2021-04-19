@@ -1,6 +1,16 @@
-Dataset: datasets/modsrc/new_yava_Bovan_ksermokhina_2005_spp_modsrc.xlsx Columns: []
+Dataset: datasets/modsrc/new_yava_Bovan_ksermokhina_2005_spp_modsrc.xlsx Columns: ['Ks_105b', 'Ks_106(1)']
 [1] NA
-Ошибка в cor.test.default(x = t[[args[8]]], y = t[[args[9]]]) :
-  'x' должен быть числовым вектором
-Вызовы: cor.test -> cor.test.default
-Выполнение остановлено
+Предупреждение:
+в результате преобразования созданы NA 
+
+	Pearson's product-moment correlation
+
+data:  t[[args[8]]] and t[[args[9]]]
+t = 6.8328, df = 175, p-value = 1.327e-10
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.3340190 0.5679654
+sample estimates:
+    cor 
+0.45891 
+

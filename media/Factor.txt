@@ -1,0 +1,17 @@
+Dataset: datasets/env/new_yava_Bovan_ksermokhina_2005_env_fortv_full_header.xlsx Columns: ['COV_TREES', 'COV_TSHRUB', 'COV_MOSS', 'COV_SOIL', 'COV_ROCK']
+ [1] "C:\\Users\\Администратор\\PycharmProjects\\PJ33\\R-4.0.4\\bin\\x64\\Rterm.exe"
+ [2] "--no-echo"                                                                    
+ [3] "--no-restore"                                                                 
+ [4] "--file=factor.r"                                                              
+ [5] "--args"                                                                       
+ [6] "datasets/env/new_yava_Bovan_ksermokhina_2005_env_fortv_full_header.xlsx"      
+ [7] "1"                                                                            
+ [8] "5"                                                                            
+ [9] "COV_TREES"                                                                    
+[10] "COV_TSHRUB"                                                                   
+[11] "COV_MOSS"                                                                     
+[12] "COV_SOIL"                                                                     
+[13] "COV_ROCK"                                                                     
+Ошибка в factanal(na.omit(data), factors = 2, method = "mls", scores = "regression") :
+  факторный анализ применим только к числовым переменным
+Выполнение остановлено

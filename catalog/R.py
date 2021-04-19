@@ -4,6 +4,63 @@ import re
 import shutil
 from itertools import groupby
 
+def module_col_factor(ds):
+    command = '../R-4.0.4/bin/Rscript'
+    path2script = "col.r"
+    args = [ds, '1']
+    cmd = [command, path2script] + args
+    try:
+        x = subprocess.check_output(cmd, universal_newlines=True, stderr=subprocess.STDOUT)
+        success = True
+    except subprocess.CalledProcessError as e:
+        x = e.output
+        success = True
+    z = re.sub(r'"', r'', x)
+    y = z.split()[1::2]
+    return y
+
+def module_jacquard(ds):
+    command = '../R-4.0.4/bin/Rscript'
+    path2script = "jaccard.r"
+    args = [ds, '1']
+    cmd = [command, path2script] + args
+    try:
+        x = subprocess.check_output(cmd, universal_newlines=True, stderr=subprocess.STDOUT)
+        success = True
+    except subprocess.CalledProcessError as e:
+        x = e.output
+        success = True
+    info_dataset = 'Dataset: ' + str(ds) + '\n'
+    file = open("media/testRjacquard.txt", "w")
+    file.write(info_dataset)
+    file.close()
+    file = open("media/testRjacquard.txt", "a")
+    file.write(str(x))
+    file.close()
+    return x
+
+def module_factor(ds, length, columns):
+
+    command = '../R-4.0.4/bin/Rscript'
+    path2script = "factor.r"
+    args = [ds, '1', length] + columns
+    cmd = [command, path2script] + args
+    print(cmd)
+    try:
+        x = subprocess.check_output(cmd, universal_newlines=True, stderr=subprocess.STDOUT)
+        success = True
+    except subprocess.CalledProcessError as e:
+        x = e.output
+        success = True
+    info_dataset = 'Dataset: ' + str(ds) + ' Columns: ' + str(columns) + '\n'
+    file = open("media/Factor.txt", "w")
+    file.write(info_dataset)
+    file.close()
+    file = open("media/Factor.txt", "a")
+    file.write(str(x))
+    file.close()
+    return x
+
 
 def module_col_comp(ds):
     command = '../R-4.0.4/bin/Rscript'
@@ -130,7 +187,6 @@ def module_comp(ds, length, columns):
 
 
 def module(ds, columns):
-
     command = '../R-4.0.4/bin/Rscript'
     path2script = "cor.r"
     args = [ds, '1'] + columns

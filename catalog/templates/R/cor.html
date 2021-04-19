@@ -33,17 +33,24 @@
                 col-lg-7">
             <div class="card-body">
                 <h5 class="card-title">{% trans "Available datasets" %}</h5>
-                {% if bookinstance_list %}
+                {% if bookinstance_list or book_list%}
                 <form action="{% url 'cor-column' %}"  method='POST'>
                     {% csrf_token %}
-                    <div class="form-group" style="overflow-y:scroll; overflow-x:hidden">
+                    <div class="list-group statistics-lst" style="overflow-y:scroll; overflow-x:hidden">
+                        {% for book in book_list %}
+                        <label  class="list-group-item ">
+                            <input class="form-check-input me-1" name="dataset" type="radio" checked
+                                   value="{{book.dataset}}">{{book.title}}
+                        </label>
+                        {% endfor %}
                         {% for datasetinst in bookinstance_list %}
-                        <label class="list-group-item bg-light">
-                            <input class="form-check-input me-1" checked id="dataset" name="dataset" type="radio" value="{{datasetinst.book.dataset}}">{{datasetinst.book.title}}
+                        <label class="list-group-item ">
+                            <input class="form-check-input me-1" id="dataset" name="dataset" type="radio" checked
+                                   value="{{datasetinst.book.dataset}}">{{datasetinst.book.title}}
                         </label>
                         {% endfor %}
                     </div>
-                    <button type="submit" value="Submit" class="btn btn-outline-danger mt-5">{% trans "Continue" %}</button>
+                    <button type="submit" value="Submit" class="btn btn-outline-primary mt-5">{% trans "Continue" %}</button>
                 </form>
                 {% else %}
                 <p class="text-success">{% trans "There are no available datasets" %}</p>
