@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-14 01:40+0300\n"
+"POT-Creation-Date: 2021-04-19 22:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,15 +81,20 @@ msgstr "Минимальная длина пароля 5 символов!"
 
 #: .\catalog\templates\R\comp.html:20 .\catalog\templates\R\comp_column.html:19
 #: .\catalog\templates\R\comp_result.html:17
+#: .\catalog\templates\R\jaccar_result.html:17
 msgid "PCA Analysis"
 msgstr "PCA Анализ"
 
 #: .\catalog\templates\R\comp.html:22 .\catalog\templates\R\cor.html:22
+#: .\catalog\templates\R\factor.html:22 .\catalog\templates\R\jaccar.html:22
 msgid "Select available dataset from the list"
 msgstr "Выберите доступный датасет из списка"
 
 #: .\catalog\templates\R\comp.html:24 .\catalog\templates\R\comp_column.html:23
 #: .\catalog\templates\R\cor.html:24 .\catalog\templates\R\cor_column.html:23
+#: .\catalog\templates\R\factor.html:24
+#: .\catalog\templates\R\factor_column.html:23
+#: .\catalog\templates\R\jaccar.html:24
 #: .\catalog\templates\catalog\statistics.html:36
 #: .\catalog\templates\catalog\statistics_column.html:24
 msgid "Datasets"
@@ -97,38 +102,47 @@ msgstr "Датасеты"
 
 #: .\catalog\templates\R\comp.html:25 .\catalog\templates\R\comp_column.html:24
 #: .\catalog\templates\R\cor.html:25 .\catalog\templates\R\cor_column.html:24
+#: .\catalog\templates\R\factor.html:25
+#: .\catalog\templates\R\factor_column.html:24
+#: .\catalog\templates\R\jaccar.html:25
 msgid "Columns"
 msgstr "Столбцы"
 
 #: .\catalog\templates\R\comp.html:35 .\catalog\templates\R\cor.html:35
+#: .\catalog\templates\R\factor.html:35 .\catalog\templates\R\jaccar.html:35
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:42
 #: .\catalog\templates\catalog\statistics.html:47
 msgid "Available datasets"
 msgstr "Доступные датасеты"
 
-#: .\catalog\templates\R\comp.html:46 .\catalog\templates\R\cor.html:46
-#: .\catalog\templates\catalog\statistics.html:59
+#: .\catalog\templates\R\comp.html:53 .\catalog\templates\R\cor.html:53
+#: .\catalog\templates\R\factor.html:53 .\catalog\templates\R\jaccar.html:53
+#: .\catalog\templates\catalog\statistics.html:65
 msgid "Continue"
 msgstr "Далее"
 
-#: .\catalog\templates\R\comp.html:49 .\catalog\templates\R\cor.html:49
-#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:54
-#: .\catalog\templates\catalog\statistics.html:61
+#: .\catalog\templates\R\comp.html:56 .\catalog\templates\R\cor.html:56
+#: .\catalog\templates\R\factor.html:56 .\catalog\templates\R\jaccar.html:56
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:58
+#: .\catalog\templates\catalog\statistics.html:67
 msgid "There are no available datasets"
 msgstr "Нет доступных датасетов"
 
 #: .\catalog\templates\R\comp_column.html:21
 #: .\catalog\templates\R\cor_column.html:21
+#: .\catalog\templates\R\factor_column.html:21
 msgid "Select columns from the list"
 msgstr "Выберите критерии из списка"
 
 #: .\catalog\templates\R\comp_column.html:34
 #: .\catalog\templates\R\cor_column.html:34
+#: .\catalog\templates\R\factor_column.html:34
 msgid "Available columns"
 msgstr "Доступные столбцы"
 
 #: .\catalog\templates\R\comp_column.html:36
 #: .\catalog\templates\R\cor_column.html:36
+#: .\catalog\templates\R\factor_column.html:36
 #: .\catalog\templates\catalog\statistics_column.html:37
 #: .\mysite\templates\object_list.html:183
 msgid "Search "
@@ -136,24 +150,31 @@ msgstr "Поиск.."
 
 #: .\catalog\templates\R\comp_column.html:58
 #: .\catalog\templates\R\cor_column.html:58
+#: .\catalog\templates\R\factor_column.html:58
 #: .\catalog\templates\catalog\statistics_column.html:70
 msgid "Get Result"
 msgstr "Далее"
 
 #: .\catalog\templates\R\comp_result.html:20
 #: .\catalog\templates\R\cor_result.html:20
+#: .\catalog\templates\R\factor_result.html:20
+#: .\catalog\templates\R\jaccar_result.html:20
 #: .\catalog\templates\catalog\statistics_result.html:21
 msgid "Back"
 msgstr "Назад"
 
 #: .\catalog\templates\R\comp_result.html:30
 #: .\catalog\templates\R\cor_result.html:30
+#: .\catalog\templates\R\factor_result.html:30
+#: .\catalog\templates\R\jaccar_result.html:30
 #: .\catalog\templates\catalog\statistics_result.html:32
 msgid "Result"
 msgstr "Результат"
 
 #: .\catalog\templates\R\comp_result.html:33
 #: .\catalog\templates\R\cor_result.html:32
+#: .\catalog\templates\R\factor_result.html:32
+#: .\catalog\templates\R\jaccar_result.html:32
 msgid "Download .txt"
 msgstr "Скачать .txt"
 
@@ -161,6 +182,19 @@ msgstr "Скачать .txt"
 #: .\catalog\templates\R\cor_result.html:17
 msgid "Correlation Analysis"
 msgstr "Корреляционный анализ"
+
+#: .\catalog\templates\R\factor.html:20
+#: .\catalog\templates\R\factor_column.html:19
+#: .\catalog\templates\R\factor_result.html:17
+#, fuzzy
+#| msgid "Factor analysis"
+msgid "Factor Analysis"
+msgstr "Факторный анализ"
+
+#: .\catalog\templates\R\jaccar.html:20
+#: .\catalog\templates\catalog\statistics.html:135
+msgid "The Jacquard method"
+msgstr "Метод Жаккара"
 
 #: .\catalog\templates\catalog\about.html:27
 msgid "The Arctic Vegetation Archive (AVA)"
@@ -357,7 +391,7 @@ msgstr "ДАТАСЕТЫ"
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:24
 #: .\catalog\templates\catalog\datasets_requests.html:23
 #: .\catalog\templates\catalog\index.html:21
-#: .\mysite\templates\instructions.html:57
+#: .\mysite\templates\instructions.html:56
 msgid "My datasets"
 msgstr "Мои датасеты"
 
@@ -367,7 +401,7 @@ msgstr "Мои датасеты"
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:25
 #: .\catalog\templates\catalog\datasets_requests.html:24
 #: .\catalog\templates\catalog\index.html:22
-#: .\mysite\templates\instructions.html:60
+#: .\mysite\templates\instructions.html:59
 msgid "My requests"
 msgstr "Мои запросы"
 
@@ -520,19 +554,19 @@ msgstr "Выберите датасет из списка"
 msgid "Options"
 msgstr "Параметры"
 
-#: .\catalog\templates\catalog\statistics.html:76
+#: .\catalog\templates\catalog\statistics.html:82
 msgid "Analytics"
 msgstr "Аналитика"
 
-#: .\catalog\templates\catalog\statistics.html:77
+#: .\catalog\templates\catalog\statistics.html:83
 msgid "Select analysis type"
 msgstr "Выберите тип анализа"
 
-#: .\catalog\templates\catalog\statistics.html:92
+#: .\catalog\templates\catalog\statistics.html:98
 msgid "Correlation analysis"
 msgstr "Корреляционный анализ"
 
-#: .\catalog\templates\catalog\statistics.html:93
+#: .\catalog\templates\catalog\statistics.html:99
 msgid ""
 "Correlation analysis is a statistical method used to evaluate the strength "
 "of relationship between two quantitative variables."
@@ -540,29 +574,28 @@ msgstr ""
 "Метод обработки статистических данных, заключающийся в изучении "
 "коэффициентов корреляции между переменными."
 
-#: .\catalog\templates\catalog\statistics.html:94
-#: .\catalog\templates\catalog\statistics.html:105
-#: .\catalog\templates\catalog\statistics.html:116
-#: .\catalog\templates\catalog\statistics.html:127
+#: .\catalog\templates\catalog\statistics.html:100
+#: .\catalog\templates\catalog\statistics.html:111
+#: .\catalog\templates\catalog\statistics.html:122
+#: .\catalog\templates\catalog\statistics.html:133
 msgid "Type of analysis"
 msgstr "Тип анализа"
 
-#: .\catalog\templates\catalog\statistics.html:94
+#: .\catalog\templates\catalog\statistics.html:100
 msgid "Correlation"
 msgstr "Корреляционный"
 
-#: .\catalog\templates\catalog\statistics.html:96
-#: .\catalog\templates\catalog\statistics.html:107
-#: .\catalog\templates\catalog\statistics.html:118
-#: .\catalog\templates\catalog\statistics.html:129
+#: .\catalog\templates\catalog\statistics.html:102
+#: .\catalog\templates\catalog\statistics.html:113
+#: .\catalog\templates\catalog\statistics.html:124
 msgid "Get Analysis"
 msgstr "Провести анализ"
 
-#: .\catalog\templates\catalog\statistics.html:103
+#: .\catalog\templates\catalog\statistics.html:109
 msgid "Principal component analysis"
 msgstr "Метод главных компонентов"
 
-#: .\catalog\templates\catalog\statistics.html:104
+#: .\catalog\templates\catalog\statistics.html:110
 msgid ""
 "Principal component analysis is the process of computing the principal "
 "components and using them to perform a change of basis on the data, "
@@ -572,24 +605,24 @@ msgstr ""
 "Один из основных способов уменьшить размерность данных, потеряв наименьшее "
 "количество информации."
 
-#: .\catalog\templates\catalog\statistics.html:114
+#: .\catalog\templates\catalog\statistics.html:120
 msgid "Factor analysis"
 msgstr "Факторный анализ"
 
-#: .\catalog\templates\catalog\statistics.html:115
-#: .\catalog\templates\catalog\statistics.html:126
+#: .\catalog\templates\catalog\statistics.html:121
+#: .\catalog\templates\catalog\statistics.html:132
 msgid "Here's a description of the analysis."
 msgstr "Нет описания анализа"
 
-#: .\catalog\templates\catalog\statistics.html:116
+#: .\catalog\templates\catalog\statistics.html:122
 msgid "Factor"
 msgstr "Факторный"
 
-#: .\catalog\templates\catalog\statistics.html:125
+#: .\catalog\templates\catalog\statistics.html:131
 msgid "Cluster analysis"
 msgstr "Кластерный анализ"
 
-#: .\catalog\templates\catalog\statistics.html:127
+#: .\catalog\templates\catalog\statistics.html:133
 msgid "Cluster"
 msgstr "Кластерный"
 
@@ -645,48 +678,48 @@ msgstr "О нас"
 msgid "Instructions"
 msgstr "Инструкции"
 
-#: .\mysite\templates\instructions.html:25
+#: .\mysite\templates\instructions.html:23
 msgid "Authorization and Registration"
 msgstr "Авторизация и Регистрация"
 
-#: .\mysite\templates\instructions.html:30
+#: .\mysite\templates\instructions.html:28
 msgid "Welcome to AVA!"
 msgstr "Добро пожаловать в AVA!"
 
-#: .\mysite\templates\instructions.html:35
+#: .\mysite\templates\instructions.html:34
 msgid "To get the full functionality of the site, you need to register"
 msgstr ""
 "Для получения полной функциональности сайта, вам необходимо пройти "
 "регистрацию"
 
-#: .\mysite\templates\instructions.html:38
+#: .\mysite\templates\instructions.html:37
 msgid "Follow the instructions"
 msgstr "Следуйте инструкции"
 
-#: .\mysite\templates\instructions.html:39
+#: .\mysite\templates\instructions.html:38
 msgid "Click the <b>Sign In</b> button in the upper right corner"
 msgstr "Нажмите <b>Войти</b> справа в меню"
 
-#: .\mysite\templates\instructions.html:39
+#: .\mysite\templates\instructions.html:38
 msgid "Click <b>Sign Up</b> if you don't have an account and register"
 msgstr "Нажмите <b>Регистрация</b> если у вас нет аккаунта"
 
-#: .\mysite\templates\instructions.html:39
+#: .\mysite\templates\instructions.html:38
 msgid "Log in to the system"
 msgstr "Выполните вход в систему"
 
-#: .\mysite\templates\instructions.html:40
+#: .\mysite\templates\instructions.html:39
 msgid ""
 "After that, the items <b>Statistics</b>, <b>Personal Cabinet</b> will appear "
 "in your menu"
 msgstr ""
 "После этого в меню появятся разделы <b>Статистика</b> и <b>Личный кабинет</b>"
 
-#: .\mysite\templates\instructions.html:47
+#: .\mysite\templates\instructions.html:46
 msgid "Queries and Datasets"
 msgstr "Запросы и Датасеты"
 
-#: .\mysite\templates\instructions.html:51
+#: .\mysite\templates\instructions.html:50
 msgid ""
 "Congratulations, registration is complete!<br>Now let's look at the main "
 "functionality in more detail"
@@ -694,11 +727,11 @@ msgstr ""
 "Поздравляем, регистрация выполнена! <br> Давайте рассмотрим основной "
 "функционал более детально"
 
-#: .\mysite\templates\instructions.html:54
+#: .\mysite\templates\instructions.html:53
 msgid "Personal account"
 msgstr "Личный кабинет"
 
-#: .\mysite\templates\instructions.html:55
+#: .\mysite\templates\instructions.html:54
 msgid ""
 "You can go to your personal account by clicking on your icon in the upper-"
 "right corner. You will get access to your profile, where all your data is "
@@ -708,7 +741,7 @@ msgstr ""
 "хранятся все ваши данные. Также вы можете добавить личную информацию, чтобы "
 "упростить работу на сайте"
 
-#: .\mysite\templates\instructions.html:58
+#: .\mysite\templates\instructions.html:57
 msgid ""
 "This section contains all the datasets available to you at the moment. You "
 "can download the dataset you are interested in by clicking on its name"
@@ -716,7 +749,7 @@ msgstr ""
 "Этот раздел содержит информацию о доступных вам датасетах на данный момент. "
 "Вы можете скачать интересующий вас датасет, нажав на его название"
 
-#: .\mysite\templates\instructions.html:61
+#: .\mysite\templates\instructions.html:60
 msgid ""
 "This section contains information about the status of your requests for "
 "access to datasets. Don't worry if getting access will take some time. The "
@@ -726,11 +759,11 @@ msgstr ""
 "подтверждение запроса требует времени. Модератор обязательно рассмотрит вашу "
 "заявку"
 
-#: .\mysite\templates\instructions.html:63
+#: .\mysite\templates\instructions.html:62
 msgid "Sending a request"
 msgstr "Отправка запроса"
 
-#: .\mysite\templates\instructions.html:64
+#: .\mysite\templates\instructions.html:63
 msgid ""
 "On the main page of the site where the map is located, there is a list of "
 "locations. By clicking on it, you can open the place card and see more "
@@ -743,11 +776,11 @@ msgstr ""
 "информацию о нем. Именно здесь расположена кнопка запроса. Вам следует "
 "нажать на нее и заполнить форму запроса<br>"
 
-#: .\mysite\templates\instructions.html:71
+#: .\mysite\templates\instructions.html:70
 msgid "Statistics and Analytics"
 msgstr "Статистика и Аналитика"
 
-#: .\mysite\templates\instructions.html:76
+#: .\mysite\templates\instructions.html:75
 msgid ""
 "The <b>Statistics</b> section allows you to analyze the datasets available "
 "to you. The page contains a description of the types of analyses and lists "
@@ -758,23 +791,23 @@ msgstr ""
 "Страница содержит описание типов анализа и список доступных датасетов. Для "
 "вашего удобства, вы можете скачать <b>Словарь данных AVA</b>"
 
-#: .\mysite\templates\instructions.html:79
+#: .\mysite\templates\instructions.html:78
 msgid "The analysis is carried out in two stages"
 msgstr "Анализ проводится в этапа"
 
-#: .\mysite\templates\instructions.html:80
+#: .\mysite\templates\instructions.html:79
 msgid "Select a dataset"
 msgstr "Выберите датасет"
 
-#: .\mysite\templates\instructions.html:80
+#: .\mysite\templates\instructions.html:79
 msgid "Selecting parameters or criteria for analysis"
 msgstr "Выберите параметры или критереии для анализа"
 
-#: .\mysite\templates\instructions.html:81
+#: .\mysite\templates\instructions.html:80
 msgid "You can download all the results of the analysis. Good luck"
 msgstr "Вы сможете загрузить результаты анализа. Удачи"
 
-#: .\mysite\templates\instructions.html:83
+#: .\mysite\templates\instructions.html:82
 msgid ""
 "If you still have questions, you can always fill out the feedback form in "
 "the About Us section"
