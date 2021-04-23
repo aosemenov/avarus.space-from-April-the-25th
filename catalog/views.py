@@ -16,7 +16,6 @@ from .forms import UserEditForm, ProfileEditForm
 
 
 
-@login_required
 def index(request):
     if request.method == 'POST':
         user_form = UserEditForm(instance=request.user, data=request.POST)
@@ -326,8 +325,8 @@ def get_name_jacquard(request):
         datasets = request.POST['dataset']
         some_result = module_jacquard(datasets)
         import shutil
-        source = 'Rplots.pdf'
-        dest = 'media/Rplots.pdf'
+        source = 'Jaccard.pdf'
+        dest = 'media/Jaccard.pdf'
         try:
             dest = shutil.move(source, dest)
             print("File is moved successfully to: ", dest)

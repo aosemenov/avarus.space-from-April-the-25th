@@ -5,7 +5,8 @@ import shutil
 from itertools import groupby
 
 def module_col_factor(ds):
-    command = '../R-4.0.4/bin/Rscript'
+    #command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
     path2script = "col.r"
     args = [ds, '1']
     cmd = [command, path2script] + args
@@ -20,7 +21,8 @@ def module_col_factor(ds):
     return y
 
 def module_jacquard(ds):
-    command = '../R-4.0.4/bin/Rscript'
+    #command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
     path2script = "jaccard.r"
     args = [ds, '1']
     cmd = [command, path2script] + args
@@ -40,8 +42,8 @@ def module_jacquard(ds):
     return x
 
 def module_factor(ds, length, columns):
-
-    command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
+    #command = '../R-4.0.4/bin/Rscript'
     path2script = "factor.r"
     args = [ds, '1', length] + columns
     cmd = [command, path2script] + args
@@ -63,7 +65,8 @@ def module_factor(ds, length, columns):
 
 
 def module_col_comp(ds):
-    command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
+    #command = '../R-4.0.4/bin/Rscript'
     path2script = "col.r"
     args = [ds, '1']
     cmd = [command, path2script] + args
@@ -79,7 +82,8 @@ def module_col_comp(ds):
 
 
 def module_col(ds):
-    command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
+    #command = '../R-4.0.4/bin/Rscript'
     path2script = "col.r"
     args = [ds, '1']
     cmd = [command, path2script] + args
@@ -97,8 +101,8 @@ def module_col(ds):
 
 
 def module_statistics(ds, length, columns):
-
-    command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
+    #command = '../R-4.0.4/bin/Rscript'
     path2script = "subset.r"
     args = [ds, '1', length, 'PASL.TAXON.SCIENTIFIC.NAME.NO.AUTHOR(S)'] + columns
     cmd = [command, path2script] + args
@@ -113,8 +117,8 @@ def module_statistics(ds, length, columns):
 
 
 def module_statistics_env(ds, length, columns):
-
-    command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
+    #command = '../R-4.0.4/bin/Rscript'
     path2script = "subset_env.r"
     args = [ds, '1', length, 'SITE_MOIST'] + columns
     cmd = [command, path2script] + args
@@ -129,7 +133,8 @@ def module_statistics_env(ds, length, columns):
 
 
 def module_col_statistics(ds):
-    command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
+    #command = '../R-4.0.4/bin/Rscript'
     path2script = "znach.r"
     args = [ds, '1']
     cmd = [command, path2script] + args
@@ -146,7 +151,8 @@ def module_col_statistics(ds):
 
 
 def module_col_statistics_env(ds):
-    command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
+    #command = '../R-4.0.4/bin/Rscript'
     path2script = "znach_poch.r"
     args = [ds, '1']
     cmd = [command, path2script] + args
@@ -164,8 +170,8 @@ def module_col_statistics_env(ds):
 
 
 def module_comp(ds, length, columns):
-
-    command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
+    #command = '../R-4.0.4/bin/Rscript'
     path2script = "PCA.r"
     args = [ds, '1', length] + columns
     cmd = [command, path2script] + args
@@ -187,7 +193,8 @@ def module_comp(ds, length, columns):
 
 
 def module(ds, columns):
-    command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
+    #command = '../R-4.0.4/bin/Rscript'
     path2script = "cor.r"
     args = [ds, '1'] + columns
     cmd = [command, path2script] + args

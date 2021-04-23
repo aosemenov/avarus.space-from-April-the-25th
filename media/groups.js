@@ -13,7 +13,7 @@ var groups = [
                     ContentHeader:['<a >Bovanenkovo</a><br>' +
                         '<span class="description">(K. Ermokhina, 2005)</span><hr class="hr1"/>'],
                     ContentBody:['<a href="#">\n' + '\n' + 'Location Map</a><br/>' + '<img src="../media/pictures/Bovanenkovo.png" height="150" width="200"> <br/> ' +
-                        '<br/> <a id="btn1" type="button" class="btn btn-info"  href=\'javascript: document.location.href = "/bovanenko/";\' style="color:white">Open</a>',],
+                        '<br/> <a id="btn1" type="button" class="btn btn-info"  href=\'javascript: document.location.href = "/bovanenkovo/";\' style="color:white">Open</a>',],
                     ContentFooter:['Number of Plots:<br/>95 plots'],
                     hint: ['<div class="map__hint">','Bovanenkovo','</div>']
 

@@ -4,7 +4,6 @@ library('tibble')
 #Preparing data
 
 args <- commandArgs()
-print(args)
 n <- as.numeric(args[7])
 data <- read_excel(args[6], sheet = n)
 data <- column_to_rownames(data, var = colnames(data[2]))

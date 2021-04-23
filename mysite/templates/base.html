@@ -43,12 +43,12 @@
                     <div class="nav-panel__item">
                         <a class="nav-panel__link" href="{% url 'about' %}">{% trans "About Us" %}</a>
                     </div>
+                    <div class="nav-panel__item">
+                        <a class="nav-panel__link" href="/instructions/">{% trans "Instructions" %}</a>
+                    </div>
                     {% if user.is_authenticated %}
                     <div class="nav-panel__item">
                         <a class="nav-panel__link" href="{% url 'statistics_view' %}">{% trans "Statistics" %}</a>
-                    </div>
-                    <div class="nav-panel__item">
-                        <a class="nav-panel__link" href="/instructions/">{% trans "Instructions" %}</a>
                     </div>
                     <div class="nav-panel__item">
                         <form class="nav-panel__form" action="{% url 'set_language' %}" method="post">{% csrf_token %}
@@ -98,7 +98,9 @@
             <div class="header-main__profile">
                 <div class="profile">
                     <div class="profile__user-name">
-                        <p class="profile__text">{{ user.get_username }}</p>
+                        <a class="profile__link" style="text-decoration: none" href="{% url 'index' %}">
+                            <p class="profile__text">{{ user.get_username }}</p>
+                        </a>
                     </div>
                     <div class="profile__avatar">
                         <a class="profile__link" href="{% url 'index' %}">

@@ -7,13 +7,6 @@ This is vegan 2.5-7
 Предупреждения:
 1: пакет 'vegan' был собран под R версии 4.0.5 
 2: пакет 'permute' был собран под R версии 4.0.5 
-[1] "C:\\Users\\Администратор\\PycharmProjects\\PJ33\\R-4.0.4\\bin\\x64\\Rterm.exe"
-[2] "--no-echo"                                                                    
-[3] "--no-restore"                                                                 
-[4] "--file=jaccard.r"                                                             
-[5] "--args"                                                                       
-[6] "datasets/modsrc/new_yava_Bovan_ksermokhina_2005_spp_modsrc.xlsx"              
-[7] "1"                                                                            
               Ks_103    Ks_104   Ks_105a   Ks_105b Ks_106(1) Ks_106(2)
 Ks_104     0.7482517                                                  
 Ks_105a    0.9509202 0.8658537                                        

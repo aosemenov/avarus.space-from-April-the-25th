@@ -1,4 +1,4 @@
-Dataset: datasets/modsrc/new_yava_Bovan_ksermokhina_2005_spp_modsrc.xlsx Columns: ['Ks_105b', 'Ks_106(1)']
+Dataset: datasets/modsrc/new_yava_Bovan_ksermokhina_2005_spp_modsrc.xlsx Columns: ['Ks_105b', 'Ks_106(2)']
 [1] NA
 Предупреждение:
 в результате преобразования созданы NA 
@@ -6,11 +6,11 @@ Dataset: datasets/modsrc/new_yava_Bovan_ksermokhina_2005_spp_modsrc.xlsx Columns
 	Pearson's product-moment correlation
 
 data:  t[[args[8]]] and t[[args[9]]]
-t = 6.8328, df = 175, p-value = 1.327e-10
+t = -0.16287, df = 175, p-value = 0.8708
 alternative hypothesis: true correlation is not equal to 0
 95 percent confidence interval:
- 0.3340190 0.5679654
+ -0.1595218  0.1354357
 sample estimates:
-    cor 
-0.45891 
+        cor 
+-0.01231085 
 
