@@ -26,7 +26,7 @@ def module_jacquard(ds):
     path2script = "jaccard.r"
     args = [ds, '1']
     cmd = [command, path2script] + args
-    try:    
+    try:
         x = subprocess.check_output(cmd, universal_newlines=True, stderr=subprocess.STDOUT)
         success = True
     except subprocess.CalledProcessError as e:
