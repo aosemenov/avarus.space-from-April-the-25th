@@ -233,7 +233,7 @@ DATABASES = {
     },
     'users': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': '0.0.0.0',
+        'HOST': 'localhost',
         'NAME': 'ava2',
         'PASSWORD': 'pjkjnjtz,kjrj',
         'PORT': '5432',
