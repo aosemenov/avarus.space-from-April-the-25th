@@ -12,7 +12,7 @@ admin.site.register(Profile, ProfileAdmin)
 
 
 
-class AuthorAdmin(TranslationAdmin):
+class AuthorAdmin(admin.ModelAdmin):
 
     list_display = ('first_name', 'last_name')
     fields = ['first_name', 'last_name']
