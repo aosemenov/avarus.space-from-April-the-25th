@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.db import models
-from modeltranslation.admin import TranslationAdmin
 from .models import Author, Book, BookInstance, FeedBack, Profile
 
 
