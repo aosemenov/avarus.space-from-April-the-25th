@@ -124,7 +124,6 @@ MIDDLEWARE = [
 ]
 
 INSTALLED_APPS = [
-    'modeltranslation',
     'django_filters',
     'djangocms_admin_style',
     'django.contrib.auth',
