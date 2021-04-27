@@ -108,15 +108,14 @@
 }
 
 .u-section-2 .u-sheet-1 {
-  min-height: 635px;
+  min-height: 900px;
 }
 
 .u-section-2 .u-image-1 {
-  width: 800px;
-  min-height: 575px;
+  width: 100%;
+  min-height: 800px;
   background-image: url("pictures/rusAVA_15.png");
   height: auto;
-  margin: 0 auto 60px;
 }
 
 .u-section-2 .u-container-layout-1 {

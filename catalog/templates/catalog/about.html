@@ -94,18 +94,15 @@
           <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
             <div class="u-container-layout u-container-layout-1">
               <h2 class="u-text u-text-1">{% trans "Contact Us" %}</h2>
-              <p class="u-text u-text-2">{% trans "Email" %}:<br>
-                <a href="mailto:diankina@gmail.com" target="_blank" rel="noopener noreferrer" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">diankina@gmail.com</a>&nbsp;<br>
-                <a href="mailto:vitalii.zemlianskii@ieu.uzh.ch" target="_blank" rel="noopener noreferrer" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">vitalii.zemlianskii@ieu.uzh.ch</a>
-                <br>
-                <br>
+              <p class="u-text u-text-3">{% trans "Great vision without great people is irrelevant.<br>Let's work together."%}
+              </p>
+              <br>
+              <br>
               </p>
             </div>
           </div>
           <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
             <div class="u-container-layout u-container-layout-2">
-              <p class="u-text u-text-3">{% trans "Great vision without great people is irrelevant.<br>Let's work together."%}
-              </p>
               <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
                 <form action="{% url 'about'  %}" method="POST" class="u-block-46e8-10 u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" source="custom">
                   {% csrf_token %}
@@ -121,9 +118,15 @@
                     <label for="message-f9f1" class="u-form-control-hidden u-label">{% trans "Message" %}</label>
                     <textarea placeholder="Enter your message" rows="4" cols="50" id="message-f9f1" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""></textarea>
                   </div>
+                  {% if user.is_authenticated %}
                   <div class="u-align-left u-form-group u-form-submit">
                     <button type="submit" id="submit" class="btn btn-primary mt-2" >{% trans "Submit" %}</button>
                   </div>
+                  {% else %}
+                  <div class="u-align-left u-form-group u-form-submit">
+                    <button type="submit" disabled id="submit2" class="btn btn-primary mt-2" >{% trans "Submit" %}</button>
+                  </div>
+                  {% endif %}
                 </form>
               </div>
             </div>

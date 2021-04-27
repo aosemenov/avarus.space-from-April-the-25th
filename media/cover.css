@@ -3,7 +3,13 @@
 body, html{
     min-width: 375px;
 }
-
+.mastfoot p{
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.875em;
+    line-height: 120%;
+}
 header{
     width: 100%;
 }
@@ -72,11 +78,18 @@ header{
     display:flex;
 }
 .profile__user-name{
-
-    margin: 0 10px 0 19px;
     display:flex;
+    margin: 0 10px 0 19px;
+    max-width: 65px;
+}
+.profile__link{
+    width: 100%;
 }
 .profile__text{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
     margin: 0;
     font-family: Roboto, sans-serif;
     font-style: normal;

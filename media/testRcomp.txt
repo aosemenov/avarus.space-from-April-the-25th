@@ -1,9 +1,9 @@
-Dataset: datasets/env/new_yava_Bovan_ksermokhina_2005_env_fortv_full_header.xlsx Columns: ['CRYP_QUAL', 'COV_SHRUBS']
+Dataset: datasets/env/new_yava_Bovan_ksermokhina_2005_env_fortv_full_header.xlsx Columns: ['FLOR_QUAL', 'CRYP_QUAL']
 Standard deviations (1, .., p=2):
-[1] 1.1155076 0.8692771
+[1] 1.0439700 0.9540056
 
 Rotation (n x k) = (2 x 2):
-                  PC1        PC2
-CRYP_QUAL  -0.7071068 -0.7071068
-COV_SHRUBS  0.7071068 -0.7071068
-Было 20 предупреждений (введите warnings() чтобы их просмотреть)
+                PC1        PC2
+FLOR_QUAL 0.7071068  0.7071068
+CRYP_QUAL 0.7071068 -0.7071068
+Было 24 предупреждения (введите warnings() чтобы их просмотреть)

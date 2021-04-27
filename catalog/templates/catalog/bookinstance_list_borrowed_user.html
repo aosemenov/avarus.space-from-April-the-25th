@@ -28,10 +28,8 @@
                 {% endif %}
                 {% if user.is_staff %}
                 <p>{% trans "STAFF" %}</p>
-                {% if perms.catalog.can_mark_returned %}
                 <a href="{% url 'books' %}">{% trans "All datasets" %}</a><br/>
                 <a href="{% url 'all-borrowed' %}">{% trans "All borrowed" %}</a><br/>
-                {% endif %}
                 {% endif %}
             </div>
         </div>

@@ -64,13 +64,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
-# Added as part of challenge!
-from django.contrib.auth.mixins import PermissionRequiredMixin
 
-
-class LoanedBooksAllListView(PermissionRequiredMixin, generic.ListView):
+class LoanedBooksAllListView(generic.ListView):
     model = BookInstance
-    permission_required = 'catalog.can_mark_returned'
     template_name = 'catalog/bookinstance_list_borrowed_all.html'
     paginate_by = 10
 
@@ -102,7 +98,7 @@ class FeedBackView(View):
             name_space = request.POST.get('name_space')
             description = request.POST.get('description')
             messages.success(request, 'The request was sent successfully')
-            send_mail(f'avarus.space от {user}', f'Запрос на доступ к {name_space} от {user} {organization} {position}.\nЦель запроса: {description}.\nEmail: {to}', settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER])
+            send_mail(f'avarus.space от {user}', f'Запрос на доступ к {name_space} от {user} {organization} {position}.\nЦель запроса: {description}.\nEmail: {to}', settings.EMAIL_HOST_USER, ['vitalii.zemlianskii@ieu.uzh.ch', 'moose.2000@mail.ru', 'diankina@gmail.com'])
             return render(request, 'catalog/index.html')
         else:
             form = FeedBackForm()

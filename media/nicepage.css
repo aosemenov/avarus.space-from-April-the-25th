@@ -24435,8 +24435,8 @@ a.u-link.u-hover-grey-75:hover {
 .u-body.u-grey-80,
 .u-container-style.u-grey-80:before,
 .u-table-alt-grey-80 tr:nth-child(even) {
-  color: #ffffff;
-  background-color: #333333;
+  color: #333333;
+  background-color: #ffffff;
 }
 .u-button-style.u-grey-80,
 .u-button-style.u-grey-80[class*="u-border-"] {
@@ -32441,6 +32441,7 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-footer {
+  max-height: 150px;
   background-image: none;
 }
 
@@ -32449,8 +32450,7 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-footer .u-text-1 {
-  width: 417px;
-  margin: 66px auto 32px;
+  margin: 0 auto;
 }
 
 .u-footer .u-btn-1 {

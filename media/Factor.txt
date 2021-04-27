@@ -1,4 +1,4 @@
-Dataset: datasets/env/new_yava_Bovan_ksermokhina_2005_env_fortv_full_header.xlsx Columns: ['RELEVE_NR', 'REL_AREA', 'SHAPE', 'COVERSCALE', 'REPEAT']
+Dataset: datasets/env/new_yava_Bovan_ksermokhina_2005_env_fortv_full_header.xlsx Columns: ['COV_SHRUBS', 'COV_MOSS', 'COV_LICH', 'COV_TOTAL', 'SHRUB_HT', 'HERB_HT']
 Ошибка в factanal(na.omit(data), factors = 2, method = "mls", scores = "regression") :
   факторный анализ применим только к числовым переменным
 Выполнение остановлено

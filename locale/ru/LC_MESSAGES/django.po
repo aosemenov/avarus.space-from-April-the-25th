@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-19 22:15+0300\n"
+"POT-Creation-Date: 2021-04-28 00:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,7 +81,6 @@ msgstr "Минимальная длина пароля 5 символов!"
 
 #: .\catalog\templates\R\comp.html:20 .\catalog\templates\R\comp_column.html:19
 #: .\catalog\templates\R\comp_result.html:17
-#: .\catalog\templates\R\jaccar_result.html:17
 msgid "PCA Analysis"
 msgstr "PCA Анализ"
 
@@ -104,26 +103,25 @@ msgstr "Датасеты"
 #: .\catalog\templates\R\cor.html:25 .\catalog\templates\R\cor_column.html:24
 #: .\catalog\templates\R\factor.html:25
 #: .\catalog\templates\R\factor_column.html:24
-#: .\catalog\templates\R\jaccar.html:25
 msgid "Columns"
 msgstr "Столбцы"
 
 #: .\catalog\templates\R\comp.html:35 .\catalog\templates\R\cor.html:35
-#: .\catalog\templates\R\factor.html:35 .\catalog\templates\R\jaccar.html:35
-#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:42
+#: .\catalog\templates\R\factor.html:35 .\catalog\templates\R\jaccar.html:34
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:40
 #: .\catalog\templates\catalog\statistics.html:47
 msgid "Available datasets"
 msgstr "Доступные датасеты"
 
 #: .\catalog\templates\R\comp.html:53 .\catalog\templates\R\cor.html:53
-#: .\catalog\templates\R\factor.html:53 .\catalog\templates\R\jaccar.html:53
+#: .\catalog\templates\R\factor.html:53 .\catalog\templates\R\jaccar.html:52
 #: .\catalog\templates\catalog\statistics.html:65
 msgid "Continue"
 msgstr "Далее"
 
 #: .\catalog\templates\R\comp.html:56 .\catalog\templates\R\cor.html:56
-#: .\catalog\templates\R\factor.html:56 .\catalog\templates\R\jaccar.html:56
-#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:58
+#: .\catalog\templates\R\factor.html:56 .\catalog\templates\R\jaccar.html:55
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:56
 #: .\catalog\templates\catalog\statistics.html:67
 msgid "There are no available datasets"
 msgstr "Нет доступных датасетов"
@@ -144,7 +142,7 @@ msgstr "Доступные столбцы"
 #: .\catalog\templates\R\cor_column.html:36
 #: .\catalog\templates\R\factor_column.html:36
 #: .\catalog\templates\catalog\statistics_column.html:37
-#: .\mysite\templates\object_list.html:183
+#: .\mysite\templates\object_list.html:20
 msgid "Search "
 msgstr "Поиск.."
 
@@ -186,12 +184,11 @@ msgstr "Корреляционный анализ"
 #: .\catalog\templates\R\factor.html:20
 #: .\catalog\templates\R\factor_column.html:19
 #: .\catalog\templates\R\factor_result.html:17
-#, fuzzy
-#| msgid "Factor analysis"
 msgid "Factor Analysis"
 msgstr "Факторный анализ"
 
 #: .\catalog\templates\R\jaccar.html:20
+#: .\catalog\templates\R\jaccar_result.html:17
 #: .\catalog\templates\catalog\statistics.html:135
 msgid "The Jacquard method"
 msgstr "Метод Жаккара"
@@ -307,54 +304,54 @@ msgid "Contact Us"
 msgstr "Напишите нам"
 
 #: .\catalog\templates\catalog\about.html:97
-#: .\catalog\templates\catalog\about.html:117
-#: .\catalog\templates\catalog\datasets_requests.html:47
-#: .\catalog\templates\catalog\index.html:83
-msgid "Email"
-msgstr "Почта"
-
-#: .\catalog\templates\catalog\about.html:107
 msgid ""
 "Great vision without great people is irrelevant.<br>Let's work together."
 msgstr ""
 "Великое видение без великих людей не имеет значения. <br>Давайте работать "
 "вместе."
 
-#: .\catalog\templates\catalog\about.html:113
-#: .\catalog\templates\catalog\index.html:93
+#: .\catalog\templates\catalog\about.html:110
+#: .\catalog\templates\catalog\index.html:91
 msgid "Name"
 msgstr "Имя"
 
-#: .\catalog\templates\catalog\about.html:121
+#: .\catalog\templates\catalog\about.html:114
+#: .\catalog\templates\catalog\datasets_requests.html:45
+#: .\catalog\templates\catalog\index.html:81
+msgid "Email"
+msgstr "Почта"
+
+#: .\catalog\templates\catalog\about.html:118
 msgid "Message"
 msgstr "Сообщения"
 
-#: .\catalog\templates\catalog\about.html:125
+#: .\catalog\templates\catalog\about.html:123
+#: .\catalog\templates\catalog\about.html:127
 msgid "Submit"
 msgstr "Отправить"
 
-#: .\catalog\templates\catalog\about.html:139
-#: .\mysite\templates\object_list.html:225
+#: .\catalog\templates\catalog\about.html:142
+#: .\mysite\templates\object_list.html:59
 msgid "Designed for"
 msgstr "Разработано для"
 
-#: .\catalog\templates\catalog\about.html:139
-#: .\mysite\templates\object_list.html:225
+#: .\catalog\templates\catalog\about.html:142
+#: .\mysite\templates\object_list.html:59
 msgid "The Russian Academy of Sciences"
 msgstr "Российской академии наук"
 
-#: .\catalog\templates\catalog\about.html:139
-#: .\mysite\templates\object_list.html:225
+#: .\catalog\templates\catalog\about.html:142
+#: .\mysite\templates\object_list.html:59
 msgid "by"
 msgstr "от"
 
-#: .\catalog\templates\catalog\about.html:139
-#: .\mysite\templates\object_list.html:225
+#: .\catalog\templates\catalog\about.html:142
+#: .\mysite\templates\object_list.html:59
 msgid "MIEM"
 msgstr "МИЭМ"
 
-#: .\catalog\templates\catalog\about.html:139
-#: .\mysite\templates\object_list.html:226
+#: .\catalog\templates\catalog\about.html:142
+#: .\mysite\templates\object_list.html:60
 msgid "Supported by"
 msgstr "При поддержке"
 
@@ -432,97 +429,97 @@ msgstr "Выйти"
 msgid "STAFF"
 msgstr "СОТРУДНИКАМ"
 
+#: .\catalog\templates\catalog\book_detail.html:23
+#: .\catalog\templates\catalog\book_list.html:23
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:28
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:31
+#: .\catalog\templates\catalog\datasets_requests.html:30
+#: .\catalog\templates\catalog\index.html:28
+msgid "All datasets"
+msgstr "Все датасеты"
+
 #: .\catalog\templates\catalog\book_detail.html:24
 #: .\catalog\templates\catalog\book_list.html:24
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:29
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:32
 #: .\catalog\templates\catalog\datasets_requests.html:31
 #: .\catalog\templates\catalog\index.html:29
-msgid "All datasets"
-msgstr "Все датасеты"
-
-#: .\catalog\templates\catalog\book_detail.html:25
-#: .\catalog\templates\catalog\book_list.html:25
-#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:30
-#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:33
-#: .\catalog\templates\catalog\datasets_requests.html:32
-#: .\catalog\templates\catalog\index.html:30
 msgid "All borrowed"
 msgstr "Выдачи"
 
-#: .\catalog\templates\catalog\book_detail.html:33
+#: .\catalog\templates\catalog\book_detail.html:31
 msgid "Author"
 msgstr "Автор"
 
-#: .\catalog\templates\catalog\book_detail.html:34
+#: .\catalog\templates\catalog\book_detail.html:32
 msgid "Description"
 msgstr "Описание"
 
-#: .\catalog\templates\catalog\book_detail.html:35
+#: .\catalog\templates\catalog\book_detail.html:33
 msgid "Download archive"
 msgstr "Скачать архив"
 
-#: .\catalog\templates\catalog\book_list.html:34
+#: .\catalog\templates\catalog\book_list.html:32
 msgid "Datasets List"
 msgstr "Список датасетов"
 
-#: .\catalog\templates\catalog\book_list.html:43
+#: .\catalog\templates\catalog\book_list.html:41
 msgid "There are no datasets in the data"
 msgstr "В базе данных нет датасетов"
 
-#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:43
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:41
 msgid "Dataset name"
 msgstr "Имя датасета"
 
-#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:44
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:42
 msgid "User (login)"
 msgstr "Имя пользователя (Логин)"
 
-#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:59
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:57
 msgid "There are no datasets borrowed"
 msgstr "Нет выданых датасетов"
 
-#: .\catalog\templates\catalog\datasets_requests.html:46
+#: .\catalog\templates\catalog\datasets_requests.html:44
 msgid "Location"
 msgstr "Локация"
 
-#: .\catalog\templates\catalog\datasets_requests.html:48
+#: .\catalog\templates\catalog\datasets_requests.html:46
 msgid "Status"
 msgstr "Статус"
 
-#: .\catalog\templates\catalog\datasets_requests.html:64
+#: .\catalog\templates\catalog\datasets_requests.html:62
 msgid "There are no requests"
 msgstr "Нет активных запросов"
 
-#: .\catalog\templates\catalog\index.html:42
+#: .\catalog\templates\catalog\index.html:40
 msgid "Welcome"
 msgstr "Добро пожаловать"
 
-#: .\catalog\templates\catalog\index.html:51
+#: .\catalog\templates\catalog\index.html:49
 msgid "About "
 msgstr "Данные"
 
-#: .\catalog\templates\catalog\index.html:54
+#: .\catalog\templates\catalog\index.html:52
 msgid "Edit"
 msgstr "Редактировать"
 
-#: .\catalog\templates\catalog\index.html:72
+#: .\catalog\templates\catalog\index.html:70
 msgid "Login"
 msgstr "Логин"
 
-#: .\catalog\templates\catalog\index.html:103
+#: .\catalog\templates\catalog\index.html:101
 msgid "Organization"
 msgstr "Организация"
 
-#: .\catalog\templates\catalog\index.html:113
+#: .\catalog\templates\catalog\index.html:111
 msgid "Position"
 msgstr "Должность"
 
-#: .\catalog\templates\catalog\index.html:122
+#: .\catalog\templates\catalog\index.html:120
 msgid "You can edit your account using the following form"
 msgstr "Здесь вы можете изменить ваши данные"
 
-#: .\catalog\templates\catalog\index.html:147
+#: .\catalog\templates\catalog\index.html:145
 msgid "Save changes"
 msgstr "Сохранить"
 
@@ -541,13 +538,13 @@ msgstr "Скачать"
 #: .\catalog\templates\catalog\statistics.html:32
 #: .\catalog\templates\catalog\statistics_column.html:20
 #: .\catalog\templates\catalog\statistics_result.html:18
-#: .\mysite\templates\base.html:48
+#: .\mysite\templates\base.html:51
 msgid "Statistics"
 msgstr "Статистика"
 
 #: .\catalog\templates\catalog\statistics.html:34
-msgid "Select dataset from the list"
-msgstr "Выберите датасет из списка"
+msgid "Select dataset"
+msgstr "Выберите датасет"
 
 #: .\catalog\templates\catalog\statistics.html:37
 #: .\catalog\templates\catalog\statistics_column.html:25
@@ -610,9 +607,12 @@ msgid "Factor analysis"
 msgstr "Факторный анализ"
 
 #: .\catalog\templates\catalog\statistics.html:121
-#: .\catalog\templates\catalog\statistics.html:132
-msgid "Here's a description of the analysis."
-msgstr "Нет описания анализа"
+msgid ""
+"A multidimensional method used to study the relationships between the values "
+"of variables"
+msgstr ""
+"Метод обработки статистических данных, заключающийся в изучении "
+"коэффициентов корреляции между переменными."
 
 #: .\catalog\templates\catalog\statistics.html:122
 msgid "Factor"
@@ -621,6 +621,13 @@ msgstr "Факторный"
 #: .\catalog\templates\catalog\statistics.html:131
 msgid "Cluster analysis"
 msgstr "Кластерный анализ"
+
+#: .\catalog\templates\catalog\statistics.html:132
+msgid ""
+"A multidimensional statistical procedure that collects data that contains "
+"information about a selection of objects, and then organizes the objects "
+"into relatively homogeneous groups"
+msgstr "Многомерная статистическая процедура, выполняющая сбор данных, содержащих информацию о выборке объектов, и затем упорядочивающая объекты в сравнительно однородные группы."
 
 #: .\catalog\templates\catalog\statistics.html:133
 msgid "Cluster"
@@ -658,11 +665,11 @@ msgstr "Скачать modsrc"
 msgid "Download env"
 msgstr "Скачать env"
 
-#: .\mysite\settings.py:173 .\mysite\settings.py:183
+#: .\mysite\settings.py:172 .\mysite\settings.py:182
 msgid "EN"
 msgstr ""
 
-#: .\mysite\settings.py:174 .\mysite\settings.py:190
+#: .\mysite\settings.py:173 .\mysite\settings.py:189
 msgid "RU"
 msgstr ""
 
@@ -674,7 +681,7 @@ msgstr "Главная"
 msgid "About Us"
 msgstr "О нас"
 
-#: .\mysite\templates\base.html:51
+#: .\mysite\templates\base.html:47
 msgid "Instructions"
 msgstr "Инструкции"
 
@@ -815,6 +822,6 @@ msgstr ""
 "Если у вас остались вопросы, вы всегда можете заполнить форму обратной связи "
 "на странице <b>О нас</b>"
 
-#: .\mysite\templates\object_list.html:208
+#: .\mysite\templates\object_list.html:42
 msgid "Search"
 msgstr "Поиск.."

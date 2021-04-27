@@ -26,12 +26,12 @@
         <div style="display:block" id="result" class="col-xs-12
                 col-sm-12
                 col-md-11
-                col-lg-5">
+                col-lg-3">
             <div  class="card">
                 <div class="card-body">
                     <h5 class="card-title">{% trans "Statistics" %}</h5>
                     <p class="card-text">
-                        {% trans "Select dataset from the list" %}</p>
+                        {% trans "Select dataset" %}</p>
                     <div  style="display:block" class="list-group" id="myTab" role="tablist">
                         <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" data-bs-toggle="list"  role="tab">{% trans "Datasets" %}</a>
                         <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center disabled" data-bs-toggle="list"  role="tab">{% trans "Options" %}</a>
@@ -42,7 +42,7 @@
         <div id="result-detail" class="card col-xs-12
                 col-sm-12
                 col-md-11
-                col-lg-6">
+                col-lg-8">
             <div class="card-body">
                 <h5 class="card-title">{% trans "Available datasets" %}</h5>
                 {% if book_list or bookinstance_list %}
@@ -118,7 +118,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{% trans "Factor analysis" %}</h5>
-                            <p class="card-text">{% trans "Here's a description of the analysis." %}</p>
+                            <p class="card-text">{% trans "A multidimensional method used to study the relationships between the values of variables" %}</p>
                             <label><b>{% trans "Type of analysis" %}:</b> {% trans "Factor" %}</label>
                             <br>
                             <a  class="btn btn-outline-danger mt-2" href="{% url 'factor-analysis' %}">{% trans "Get Analysis" %}</a>
@@ -129,7 +129,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{% trans "Cluster analysis" %}</h5>
-                            <p class="card-text">{% trans "Here's a description of the analysis." %}</p>
+                            <p class="card-text">{% trans "A multidimensional statistical procedure that collects data that contains information about a selection of objects, and then organizes the objects into relatively homogeneous groups" %}</p>
                             <label><b>{% trans "Type of analysis" %}:</b> {% trans "Cluster" %}</label>
                             <br>
                             <a class="btn btn-outline-danger mt-2" href="{% url 'jacquard-analysis' %}">{% trans "The Jacquard method" %}</a>
