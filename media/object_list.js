@@ -12,8 +12,10 @@ function init() {
             type: 'yandex#satellite'
         },
         {
-            searchControlProvider: 'yandex#search'
+            searchControlProvider: 'yandex#search',
+            autoPanMargin: 20,
         }),
+
         // Контейнер для меню.
 
         menu = $('<ul class="menu"></ul>');
@@ -48,11 +50,15 @@ function init() {
                 // Зададим содержимое нижней части балуна.
                 balloonContentFooter: item.ContentFooter.join(''),
                 // Зададим содержимое всплывающей подсказки.
-                hintContent: item.hint.join('')
-            });
+                hintContent: item.hint.join(''),
+            },
+            //     {
+            //     balloonPane: 'outerBalloon'
+            // }
+            );
 
-        // Добавляем метку в коллекцию.
-        collection.add(placemark);
+        // Добавляем метку в коллекцию.S
+        collection.add(placemark)
         // Добавляем пункт в подменю.
         submenuItem
             .appendTo(submenu)
@@ -64,7 +70,7 @@ function init() {
                 }
             })
             .bind('click', function () {
-                map.panTo(item.center, {flying: 6, duration: 1500})
+                map.panTo([item.center[0]+2.5, item.center[1]], {flying: 6, duration: 1500})
                 return false;
             })
         document.querySelector('#elastic').oninput = function () {

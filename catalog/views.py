@@ -339,3 +339,39 @@ def get_name_jacquard(request):
         return render(request, template_name='R/jaccar_result.html', context={'result': request.session['result']})
     else:
         return render(request, 'R/jaccar.html')
+
+
+def get_name_plants(request):
+    if request.method == 'POST':
+        datasets = request.POST['dataset']
+        some_result = module_plants(datasets)
+        request.session['result'] = some_result
+        return render(request, template_name='R/species_amount_result.html', context={'result': request.session['result']})
+    else:
+        return render(request, 'R/statistics.html')
+
+
+def get_name_species(request):
+    if request.method == 'POST':
+        datasets = request.POST['dataset']
+        group = request.POST['group']
+        some_result = module_species(datasets, group)
+        import shutil
+        source = 'Rplots.pdf'
+        dest = 'media/Rplots.pdf'
+        try:
+            dest = shutil.move(source, dest)
+            print("File is moved successfully to: ", dest)
+        except IsADirectoryError:
+            print("Source is a file but destination is a directory.")
+        except NotADirectoryError:
+            print("Source is a directory but destination is a file.")
+        except PermissionError:
+            print("Operation not permitted.")
+        except OSError as error:
+            print(error)
+        print('The file is successfully moved to another destination')
+        request.session['result'] = some_result
+        return render(request, template_name='R/groups_amount_result.html', context={'result': request.session['result']})
+    else:
+        return render(request, 'R/statistics.html')

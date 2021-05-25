@@ -42,8 +42,8 @@ def module_jacquard(ds):
     return x
 
 def module_factor(ds, length, columns):
-    command = 'Rscript'
     #command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
     path2script = "factor.r"
     args = [ds, '1', length] + columns
     cmd = [command, path2script] + args
@@ -65,8 +65,8 @@ def module_factor(ds, length, columns):
 
 
 def module_col_comp(ds):
-    command = 'Rscript'
     #command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
     path2script = "col.r"
     args = [ds, '1']
     cmd = [command, path2script] + args
@@ -82,8 +82,8 @@ def module_col_comp(ds):
 
 
 def module_col(ds):
-    command = 'Rscript'
     #command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
     path2script = "col.r"
     args = [ds, '1']
     cmd = [command, path2script] + args
@@ -101,8 +101,8 @@ def module_col(ds):
 
 
 def module_statistics(ds, length, columns):
-    command = 'Rscript'
     #command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
     path2script = "subset.r"
     args = [ds, '1', length, 'PASL.TAXON.SCIENTIFIC.NAME.NO.AUTHOR(S)'] + columns
     cmd = [command, path2script] + args
@@ -117,8 +117,8 @@ def module_statistics(ds, length, columns):
 
 
 def module_statistics_env(ds, length, columns):
-    command = 'Rscript'
     #command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
     path2script = "subset_env.r"
     args = [ds, '1', length, 'SITE_MOIST'] + columns
     cmd = [command, path2script] + args
@@ -133,8 +133,8 @@ def module_statistics_env(ds, length, columns):
 
 
 def module_col_statistics(ds):
-    command = 'Rscript'
     #command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
     path2script = "znach.r"
     args = [ds, '1']
     cmd = [command, path2script] + args
@@ -151,8 +151,8 @@ def module_col_statistics(ds):
 
 
 def module_col_statistics_env(ds):
-    command = 'Rscript'
     #command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
     path2script = "znach_poch.r"
     args = [ds, '1']
     cmd = [command, path2script] + args
@@ -170,8 +170,8 @@ def module_col_statistics_env(ds):
 
 
 def module_comp(ds, length, columns):
-    command = 'Rscript'
     #command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
     path2script = "PCA.r"
     args = [ds, '1', length] + columns
     cmd = [command, path2script] + args
@@ -193,8 +193,8 @@ def module_comp(ds, length, columns):
 
 
 def module(ds, columns):
-    command = 'Rscript'
     #command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
     path2script = "cor.r"
     args = [ds, '1'] + columns
     cmd = [command, path2script] + args
@@ -219,3 +219,47 @@ def print_hi(name):
 
 if __name__ == '__main__':
     print_hi('PyCharm')
+
+
+def module_plants(ds):
+    #command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
+    path2script = "Classify_by_groups.R"
+    args = [ds, '1']
+    cmd = [command, path2script] + args
+    try:
+        x = subprocess.check_output(cmd, universal_newlines=True, stderr=subprocess.STDOUT)
+        success = True
+    except subprocess.CalledProcessError as e:
+        x = e.output
+        success = True
+    info_dataset = 'Dataset: ' + str(ds) + '\n'
+    file = open("media/testRplants.txt", "w")
+    file.write(info_dataset)
+    file.close()
+    file = open("media/testRplants.txt", "a")
+    file.write(str(x))
+    file.close()
+    return x
+
+
+def module_species(ds, gr):
+    #command = '../R-4.0.4/bin/Rscript'
+    command = 'Rscript'
+    path2script = "charts_for_groups.R"
+    args = [ds, '1', gr]
+    cmd = [command, path2script] + args
+    try:
+        x = subprocess.check_output(cmd, universal_newlines=True, stderr=subprocess.STDOUT)
+        success = True
+    except subprocess.CalledProcessError as e:
+        x = e.output
+        success = True
+    info_dataset = 'Dataset: ' + str(ds) + '\n'
+    file = open("media/testRsp.txt", "w")
+    file.write(info_dataset)
+    file.close()
+    file = open("media/testRsp.txt", "a")
+    file.write(str(x))
+    file.close()
+    return x

@@ -1,9 +1,5 @@
-Dataset: datasets/env/new_yava_Bovan_ksermokhina_2005_env_fortv_full_header.xlsx Columns: ['FLOR_QUAL', 'CRYP_QUAL']
-Standard deviations (1, .., p=2):
-[1] 1.0439700 0.9540056
-
-Rotation (n x k) = (2 x 2):
-                PC1        PC2
-FLOR_QUAL 0.7071068  0.7071068
-CRYP_QUAL 0.7071068 -0.7071068
-Было 24 предупреждения (введите warnings() чтобы их просмотреть)
+Dataset: datasets/env/new_yava_Myam_ksermokhina_2012_env_fortv_full_header.xlsx Columns: ['COV_TSHRUB', 'COV_LSHRUB']
+Ошибка в prcomp.default(na.omit(data), scale = TRUE) :
+  не могу отмасштабировать постоянную/нулевую колонку с единичной дисперсией
+Вызовы: prcomp -> prcomp.default
+Выполнение остановлено

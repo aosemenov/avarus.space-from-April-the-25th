@@ -1,3 +1,14 @@
+#btn-preview{
+    float: right;
+    margin-right: 5px;
+}
+.description{
+    font-size: 90%;
+    color: gray;
+}
+.hr1{
+    margin-top:5px;
+}
 .mastfoot{
     left: 0;
     bottom: 20px;
@@ -99,7 +110,7 @@
 #map {
     position: relative;
     width: 100%;
-    height: 750px;
+    height: 610px;
 
 }
 /* Оформление меню (начало)*/
@@ -163,17 +174,20 @@
     opacity: 1;
     transition: all 0.2s linear;
 }
-
-@media screen and (max-width:970px) {
+@media screen and (max-width:1000px) {
     .search-box{
         display: none;
     }
     .map-box {
-        top: 135px;
+        top: 10px;
     }
     .menu{
-        top: 190px;
+        top: 70px;
 
     }
+    #map {
+    height: 600px;
+
+}
 
 }

@@ -1,3 +1,4 @@
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render
@@ -10,7 +11,7 @@ from django.db import models
 from django.conf import settings
 from django.utils.translation import gettext as _
 # ПРОФИЛЬ
-
+import uuid
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
@@ -55,8 +56,7 @@ class Book(models.Model):
     class Meta:
         verbose_name = 'Dataset'
 
-
-import uuid  # Required for unique book instances
+  # Required for unique book instances
 
 
 class BookInstance(models.Model):
@@ -118,3 +118,24 @@ class FeedBack(models.Model):
 
     class Meta:
         verbose_name = 'Requests to access the dataset'
+
+
+class AddLocations(models.Model):
+    name = models.CharField('Location name', max_length=120, null=True)
+    num = models.CharField('Number', max_length=3, null=True)
+    authors = models.CharField('Authors', max_length=120, null=True)
+    longitude = models.CharField('Longitude', max_length=120, null=True)
+    latitude = models.CharField('Latitude', max_length=120, null=True)
+    photo = models.FileField(upload_to='pictures')
+    url_photo = models.CharField('URL photo', max_length=120, null=True)
+    url_page = models.CharField('URL page', max_length=120, null=True)
+    plots = models.CharField('Number of plots', max_length=120, null=True)
+    hint = models.CharField('Hint', max_length=120, null=True)
+
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ('-id',)
+        verbose_name = 'Add Location'

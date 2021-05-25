@@ -48,6 +48,9 @@
                     <div class="form-group">
                         <input hidden value='{{ chosen_dataset }}' name="dataset" type="checkbox" checked>
                         <div class="list-group  statistics-list" style="overflow-y:scroll; overflow-x:hidden">
+                            <label class="list-group-item__statistics-column list-group-item bg-transparent">
+                                <input class=" form-check-input me-1" id="select-all" type="checkbox">select all
+                            </label>
                             {% for column in result_column %}
                             <label class="list-group-item__statistics-column list-group-item bg-light">
                                 <input class="form-check-input me-1" name="columns" type="checkbox" value="{{ column }}">{{ column }}

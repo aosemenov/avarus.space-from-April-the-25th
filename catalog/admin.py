@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db import models
-from .models import Author, Book, BookInstance, FeedBack, Profile
+from .models import Author, Book, BookInstance, FeedBack, Profile, AddLocations
 
 
 
@@ -9,7 +9,10 @@ class ProfileAdmin(admin.ModelAdmin):
 
 admin.site.register(Profile, ProfileAdmin)
 
+class AddLocationsAdmin(admin.ModelAdmin):
+    list_display = ['name', 'authors']
 
+admin.site.register(AddLocations, AddLocationsAdmin)
 
 class AuthorAdmin(admin.ModelAdmin):
 

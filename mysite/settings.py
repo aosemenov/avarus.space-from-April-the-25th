@@ -221,16 +221,6 @@ SESSION_SAVE_EVERY_REQUEST = True
 
 DATABASES = {
     'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': '',
-
-    },
-    'users': {
         'ENGINE': 'django.db.backends.postgresql',
         'HOST': 'localhost',
         'NAME': 'ava2',
@@ -239,7 +229,7 @@ DATABASES = {
         'USER': 'postgres',
     }
 }
-DATABASE_ROUTERS = ['accounts.routers.DjangoRouter', 'accounts.routers.MyApp2Router', 'catalog.routers.CatalogRouter']
+# DATABASE_ROUTERS = ['accounts.routers.DjangoRouter', 'accounts.routers.MyApp2Router', 'catalog.routers.CatalogRouter']
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',

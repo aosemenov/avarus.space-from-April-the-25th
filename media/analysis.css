@@ -1,16 +1,12 @@
 .container_result_analysis{
     margin: 40px auto;
-    width: 63%;
-}
-.container_analysis{
-    margin: 40px auto;
-    width: 63%;
+    width: 75%;
 }
 .card{
     margin-bottom: 20px;
     padding: 0 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 0 ;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: solid 0!important;
     border-radius: 8px;
 }
 #id_Datasets{
@@ -46,9 +42,4 @@ label {
 }
 .card-dictionary .card-body {
     padding: 0;
-}
-@media screen and (max-width:829px) {
-    .container_analysis {
-        margin-top: 50px;
-    }
 }

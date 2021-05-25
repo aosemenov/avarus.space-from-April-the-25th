@@ -38,9 +38,9 @@
                 <form class="search-form">
                     <input style=" margin-right:15px;box-shadow:none; border: solid 1px lightgrey; border-radius: 4px" class="search-form__input search-form__input_position_footer" id="elastic_statistics" type="text" placeholder="{{ the_search }}">
                     <div class="search-form__icon search-form__icon-position_footer">
-                            <svg class="search-form__icon-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 20L15.0962 15.0962M15.0962 15.0962C16.2725 13.9199 17 12.2949 17 10.5C17 6.91015 14.0899 4 10.5 4C6.91015 4 4 6.91015 4 10.5C4 14.0899 6.91015 17 10.5 17C12.2949 17 13.9199 16.2725 15.0962 15.0962Z" stroke="#768298" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                        <svg class="search-form__icon-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 20L15.0962 15.0962M15.0962 15.0962C16.2725 13.9199 17 12.2949 17 10.5C17 6.91015 14.0899 4 10.5 4C6.91015 4 4 6.91015 4 10.5C4 14.0899 6.91015 17 10.5 17C12.2949 17 13.9199 16.2725 15.0962 15.0962Z" stroke="#768298" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
                 </form>
                 <br>
@@ -51,6 +51,9 @@
                         <input hidden value='{{ chosen_dataset_env }}' name="dataset_env" type="checkbox" checked>
                         <label><b>{% trans "Genus" %}</b></label>
                         <div class="list-group statistics-list" style="overflow-y:scroll; overflow-x:hidden">
+                            <label class="list-group-item__statistics-column list-group-item bg-transparent">
+                                <input class=" form-check-input me-1" id="select-all" type="checkbox">select all
+                            </label>
                             {% for column in result_column %}
                             <label class="list-group-item__statistics-column list-group-item bg-light">
                                 <input class=" form-check-input me-1" name="columns" type="checkbox" value="{{ column }}">{{ column }}
@@ -60,6 +63,9 @@
                         <br>
                         <label><b>{% trans "Moisture" %}</b></label>
                         <div class="list-group statistics-list" style="overflow-y:scroll; overflow-x:hidden">
+                            <label class="list-group-item__statistics-column list-group-item bg-transparent">
+                                <input class=" form-check-input me-1" id="select-all-env" type="checkbox">select all
+                            </label>
                             {% for column in result_column_env %}
                             <label class="list-group-item bg-light">
                                 <input class="form-check-input me-1" name="columns_env" type="checkbox" value="{{ column }}">{{ column }}

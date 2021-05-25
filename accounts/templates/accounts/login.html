@@ -15,13 +15,14 @@
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background: #7abecc !important;
+			background-image: url('../../../media/pictures/Parisento-Lake.jpg');
+			background-size: cover;
 		}
 		.user_card {
 			width: 350px;
 			margin-top: auto;
 			margin-bottom: auto;
-			background: #74cfbf;
+			background: white;
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -31,7 +32,6 @@
 			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			border-radius: 5px;
-
 		}
 
 		.form_container {
@@ -39,8 +39,7 @@
 		}
 
 		#form-title{
-			color: #fff;
-
+			color: black
 		}
 
 		.login_btn {
@@ -48,19 +47,23 @@
 			background: #33ccff !important;
 			color: white !important;
 		}
+
 		.login_btn:focus {
 			box-shadow: none !important;
 			outline: 0px !important;
 		}
+
 		.login_container {
 			padding: 0 2rem;
 		}
+
 		.input-group-text {
-			background: #f7ba5b !important;
+			background: white !important;
 			color: white !important;
-			border: 0 !important;
+			border-right: 1px !important;
 			border-radius: 0.25rem 0 0 0.25rem !important;
 		}
+
 		.input_user,
 		.input_pass:focus {
 			box-shadow: none !important;
@@ -72,6 +75,14 @@
 			color: #fff;
 			padding: 10px;
 			margin-top: 10px;
+		}
+		.btn-back{
+			width: 242px;
+			margin: 0 auto;
+
+		}
+		.fa, .fas{
+			color: black!important;
 		}
 	</style>
 
@@ -85,7 +96,7 @@
 
 				<h3 id="form-title">{% trans "LOGIN" %}</h3>
 			</div>
-			<div class="d-flex justify-content-center form_container">
+			<div class="d-flex  justify-content-center form_container">
 				<form method="POST" action="">
 					{% csrf_token %}
 					<div class="input-group mb-3">
@@ -109,11 +120,15 @@
 						<input class="btn login_btn" type="submit" value="{{ the_login }}">
 					</div>
 				</form>
+
 			</div>
 			<div class="d-flex justify-content-center">{{ message }}</div>
 			<div class="mt-4">
 				<div class="d-flex justify-content-center links">
 					{% trans "Don't have an account?" %} <a href="{% url 'register' %}" class="ml-2">{% trans "Sign Up" %}</a>
+				</div>
+				<div class="d-flex justify-content-center links">
+					{% trans "Return to the homepage?" %} <a href="{% url 'home' %}" class="ml-2">{% trans "Back" %}</a>
 				</div>
 			</div>
 		</div>

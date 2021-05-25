@@ -33,8 +33,6 @@ urlpatterns += [
     path('factor-column/', views.get_column_factor, name='factor-column'),
     path('factor-result/', views.get_name_factor, name='factor-result'),
 ]
-
-
 urlpatterns += [
     path('statistics/', views.StatisticsDatasetsView, name='statistics_view'),
     path('statistics-column/', views.get_column_statistics, name='statistics-column'),
@@ -44,6 +42,10 @@ urlpatterns += [
 urlpatterns += [
     path('jacquard/', views.JacquardDatasetsView, name='jacquard-analysis'),
     path('jacquard-result/', views.get_name_jacquard, name='jacquard-result'),
+]
+urlpatterns += [
+    path('species-result/', views.get_name_species, name='species-result'),
+    path('plants-amount/', views.get_name_plants, name='plants-amount'),
 ]
 urlpatterns += [
     path('about/', views.AboutView, name='about'),
