@@ -10,7 +10,7 @@ class ProfileAdmin(admin.ModelAdmin):
 admin.site.register(Profile, ProfileAdmin)
 
 class AddLocationsAdmin(admin.ModelAdmin):
-    list_display = ['name', 'authors']
+    list_display = ['num', 'name', 'authors']
 
 admin.site.register(AddLocations, AddLocationsAdmin)
 

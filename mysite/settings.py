@@ -229,7 +229,7 @@ DATABASES = {
         'USER': 'postgres',
     }
 }
-# DATABASE_ROUTERS = ['accounts.routers.DjangoRouter', 'accounts.routers.MyApp2Router', 'catalog.routers.CatalogRouter']
+#DATABASE_ROUTERS = ['accounts.routers.DjangoRouter', 'accounts.routers.MyApp2Router', 'catalog.routers.CatalogRouter']
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',

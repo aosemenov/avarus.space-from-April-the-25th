@@ -201,10 +201,10 @@ var groups = [
             //     ContentBody:['<a href="#">\n' + '\n' + 'Location Map</a><br/>' + '<img src="../media/pictures/Parisento-Lake.jpg" height="150" width="200"> <br/> ' +
             //     '<br/> <a  type="button" class="btn btn-info"  href=\'javascript: document.location.href = "/parisentolake/";\' style="color:white">Open</a>',],
             //     ContentFooter:['Number of Plots:<br/>120 plots'],
-            //     hint: ['<div class="map__hint">','Parisento lake (G-4)','</div>']
+                //     hint: ['<div class="map__hint">','Parisento lake (G-4)','</div>']
             // },
             // {
-            //     center: [69.948689, 78.839213],
+                //     center: [69.948689, 78.839213],
             //     name: "20. Tanama river (G-3) (O. Khitun, 2017)",
             //     ContentHeader:['<a>Tanama river (G-3)</a><br>' +
             //     '<span class="description">(O. Khitun, 2017)</span><hr class="hr1"/>'],
@@ -236,7 +236,7 @@ var groups = [
             //
             // },
             // {
-            //     center: [68.857949, 66.675973],
+                //     center: [68.857949, 66.675973],
             //     name: "23. Baidara Bay (V. Zemlyanskiy, 2018)",
             //     ContentHeader:['<a>Baidara Bay</a><br>' +
             //     '<span class="description">(V. Zemlyanskiy, 2018)</span><hr class="hr1"/>'],

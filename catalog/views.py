@@ -46,7 +46,7 @@ def AboutView(request):
         message = request.POST.get('message')
         send_mail(f'Обратная связь от {username}',
                   f'{ message }.\nEmail: {email}',
-                  settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER])
+                  settings.EMAIL_HOST_USER, ['vitalii.zemlianskii@ieu.uzh.ch', 'moose.2000@mail.ru', 'diankina@gmail.com'])
     return render(request, 'catalog/about.html')
 
 def DatasetsView(request):

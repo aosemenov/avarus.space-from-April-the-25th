@@ -44,17 +44,17 @@ function init() {
         var submenuItem = $('<li class="subItem list-group-item"><a type="button">' + item.name + '</a></li>'),
             // Создаем метку.
             placemark = new ymaps.Placemark(item.center, {
-                balloonContentHeader: item.ContentHeader.join(''),
-                // Зададим содержимое основной части балуна.
-                balloonContentBody: item.ContentBody.join(''),
-                // Зададим содержимое нижней части балуна.
-                balloonContentFooter: item.ContentFooter.join(''),
-                // Зададим содержимое всплывающей подсказки.
-                hintContent: item.hint.join(''),
-            },
-            //     {
-            //     balloonPane: 'outerBalloon'
-            // }
+                    balloonContentHeader: item.ContentHeader.join(''),
+                    // Зададим содержимое основной части балуна.
+                    balloonContentBody: item.ContentBody.join(''),
+                    // Зададим содержимое нижней части балуна.
+                    balloonContentFooter: item.ContentFooter.join(''),
+                    // Зададим содержимое всплывающей подсказки.
+                    hintContent: item.hint.join(''),
+                },
+                //     {
+                //     balloonPane: 'outerBalloon'
+                // }
             );
 
         // Добавляем метку в коллекцию.S
@@ -140,6 +140,5 @@ function init() {
 
 
     $(menu).appendTo("#menu_list");
-
 
 }

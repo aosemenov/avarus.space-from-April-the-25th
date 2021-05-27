@@ -88,13 +88,13 @@ class BookInstance(models.Model):
 
 class Author(models.Model):
     first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100, blank=True)
 
     def get_absolute_url(self):
         return reverse('author-detail', args=[str(self.id)])
 
     def __str__(self):
-        return '%s, %s' % (self.last_name, self.first_name)
+        return '%s %s' % (self.last_name, self.first_name)
 
 
 class FeedBack(models.Model):
@@ -122,15 +122,14 @@ class FeedBack(models.Model):
 
 class AddLocations(models.Model):
     name = models.CharField('Location name', max_length=120, null=True)
-    num = models.CharField('Number', max_length=3, null=True)
+    num = models.CharField('Number', max_length=120, null=True)
     authors = models.CharField('Authors', max_length=120, null=True)
     longitude = models.CharField('Longitude', max_length=120, null=True)
     latitude = models.CharField('Latitude', max_length=120, null=True)
-    photo = models.FileField(upload_to='pictures')
+    photo = models.FileField(upload_to='pictures', blank=True)
     url_photo = models.CharField('URL photo', max_length=120, null=True)
     url_page = models.CharField('URL page', max_length=120, null=True)
     plots = models.CharField('Number of plots', max_length=120, null=True)
-    hint = models.CharField('Hint', max_length=120, null=True)
 
 
     def __str__(self):
@@ -138,4 +137,4 @@ class AddLocations(models.Model):
 
     class Meta:
         ordering = ('-id',)
-        verbose_name = 'Add Location'
+        verbose_name = 'Location'

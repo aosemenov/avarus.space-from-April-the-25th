@@ -76,7 +76,7 @@ def home(request):
         "ContentHeader":[f"<a>{new_place[i].name}</a><br><span class='description'>{new_place[i].authors}</span><hr class='hr1'/>"],
         "ContentBody": [f"<a>Location Map</a><br/><img src='../media/pictures/{new_place[i].url_photo}' height='150' width='200'><br/><br/><a id='btn-preview' type='button' class='btn btn-info'  href={ new_place[i].url_page } style='color:white;'>Open</a>"],
         "ContentFooter": [f"Number of Plots:<br/>{new_place[i].plots}"],
-        "hint": [f"<div class='map__hint'>',{new_place[i].hint},'</div>"]
+        "hint": [f"<div class='map__hint'>{new_place[i].name}</div>"]
         }
         data.insert(0, place)
 

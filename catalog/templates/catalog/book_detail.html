@@ -30,7 +30,7 @@
             <hr>
             <p><strong>{% trans "Author" %}:</strong> <a>{{ book.author }}</a></p>
             {%  if bool.summary %} <p><strong>{% trans "Description" %}:</strong> {{ book.summary }}</p> {% else %} {% endif %}
-            <a type="submit" value="Submit" class="btn  btn-outline-primary  mt-2" href="/media/{{book.specifications}}" download>{% trans "Download archive" %}</a>
+            <a type="submit" value="Submit" class="btn  btn-outline-primary  mt-2" href="/media/upload_datasets/{{book.specifications}}" download>{% trans "Download archive" %}</a>
             <div style="margin-left:20px;margin-top:20px">
             </div>
         </div>

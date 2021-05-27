@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-28 00:30+0300\n"
+"POT-Creation-Date: 2021-05-27 00:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,64 +20,79 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\accounts\templates\accounts\login.html:86
+#: .\accounts\templates\accounts\login.html:97
 msgid "LOGIN"
 msgstr "Авторизация"
 
-#: .\accounts\templates\accounts\login.html:95
-#: .\accounts\templates\accounts\register.html:121
+#: .\accounts\templates\accounts\login.html:106
+#: .\accounts\templates\accounts\register.html:124
 msgid "Username.."
 msgstr "Логин.."
 
-#: .\accounts\templates\accounts\login.html:103
+#: .\accounts\templates\accounts\login.html:114
 msgid "Password..."
 msgstr "Введите пароль..."
 
-#: .\accounts\templates\accounts\login.html:108
-#: .\accounts\templates\accounts\register.html:115
+#: .\accounts\templates\accounts\login.html:119
+#: .\accounts\templates\accounts\register.html:118
 #: .\mysite\templates\base.html:70
 msgid "Sign In"
 msgstr "Войти"
 
-#: .\accounts\templates\accounts\login.html:116
+#: .\accounts\templates\accounts\login.html:128
 msgid "Don't have an account?"
 msgstr "Нет аккаунта?"
 
-#: .\accounts\templates\accounts\login.html:116
+#: .\accounts\templates\accounts\login.html:128
 msgid "Sign Up"
 msgstr "Регистрация"
 
-#: .\accounts\templates\accounts\register.html:75
+#: .\accounts\templates\accounts\login.html:131
+msgid "Return to the homepage?"
+msgstr "Вернуться на главную страницу?"
+
+#: .\accounts\templates\accounts\login.html:131
+#: .\catalog\templates\R\comp_result.html:20
+#: .\catalog\templates\R\cor_result.html:20
+#: .\catalog\templates\R\factor_result.html:20
+#: .\catalog\templates\R\groups_amount_result.html:20
+#: .\catalog\templates\R\jaccar_result.html:20
+#: .\catalog\templates\R\species_amount_result.html:20
+#: .\catalog\templates\catalog\statistics_result.html:21
+msgid "Back"
+msgstr "Назад"
+
+#: .\accounts\templates\accounts\register.html:79
 msgid "REGISTER ACCOUNT"
 msgstr "Регистрация"
 
-#: .\accounts\templates\accounts\register.html:106
+#: .\accounts\templates\accounts\register.html:110
 msgid "Register Account"
 msgstr "Зарегистрироваться"
 
-#: .\accounts\templates\accounts\register.html:115
+#: .\accounts\templates\accounts\register.html:118
 msgid "Already have an account?"
 msgstr "Уже есть аккаунт?"
 
-#: .\accounts\templates\accounts\register.html:122
+#: .\accounts\templates\accounts\register.html:125
 msgid "Email.."
 msgstr "Почта.."
 
-#: .\accounts\templates\accounts\register.html:123
+#: .\accounts\templates\accounts\register.html:126
 msgid "Enter password..."
 msgstr "Введите пароль..."
 
-#: .\accounts\templates\accounts\register.html:124
+#: .\accounts\templates\accounts\register.html:127
 msgid "Re-enter Password..."
 msgstr "Повторите пароль..."
 
-#: .\accounts\views.py:26
-msgid "The passwords are different! OR"
-msgstr "Пароли не совпадают! ИЛИ"
+#: .\accounts\views.py:23
+msgid "Password must be more than 5 symbols!"
+msgstr ""
 
 #: .\accounts\views.py:27
-msgid "The minimum password length is 5 symbols!"
-msgstr "Минимальная длина пароля 5 символов!"
+msgid "The passwords are different!"
+msgstr "Пароли не совпадают!"
 
 #: .\catalog\templates\R\comp.html:20 .\catalog\templates\R\comp_column.html:19
 #: .\catalog\templates\R\comp_result.html:17
@@ -94,7 +109,6 @@ msgstr "Выберите доступный датасет из списка"
 #: .\catalog\templates\R\factor.html:24
 #: .\catalog\templates\R\factor_column.html:23
 #: .\catalog\templates\R\jaccar.html:24
-#: .\catalog\templates\catalog\statistics.html:36
 #: .\catalog\templates\catalog\statistics_column.html:24
 msgid "Datasets"
 msgstr "Датасеты"
@@ -109,20 +123,24 @@ msgstr "Столбцы"
 #: .\catalog\templates\R\comp.html:35 .\catalog\templates\R\cor.html:35
 #: .\catalog\templates\R\factor.html:35 .\catalog\templates\R\jaccar.html:34
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:40
-#: .\catalog\templates\catalog\statistics.html:47
+#: .\catalog\templates\catalog\statistics.html:45
+#: .\catalog\templates\catalog\statistics.html:161
 msgid "Available datasets"
 msgstr "Доступные датасеты"
 
 #: .\catalog\templates\R\comp.html:53 .\catalog\templates\R\cor.html:53
 #: .\catalog\templates\R\factor.html:53 .\catalog\templates\R\jaccar.html:52
-#: .\catalog\templates\catalog\statistics.html:65
+#: .\catalog\templates\catalog\statistics.html:63
+#: .\catalog\templates\catalog\statistics.html:155
+#: .\catalog\templates\catalog\statistics.html:179
 msgid "Continue"
 msgstr "Далее"
 
 #: .\catalog\templates\R\comp.html:56 .\catalog\templates\R\cor.html:56
 #: .\catalog\templates\R\factor.html:56 .\catalog\templates\R\jaccar.html:55
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:56
-#: .\catalog\templates\catalog\statistics.html:67
+#: .\catalog\templates\catalog\statistics.html:65
+#: .\catalog\templates\catalog\statistics.html:181
 msgid "There are no available datasets"
 msgstr "Нет доступных датасетов"
 
@@ -146,25 +164,19 @@ msgstr "Доступные столбцы"
 msgid "Search "
 msgstr "Поиск.."
 
-#: .\catalog\templates\R\comp_column.html:58
+#: .\catalog\templates\R\comp_column.html:61
 #: .\catalog\templates\R\cor_column.html:58
-#: .\catalog\templates\R\factor_column.html:58
-#: .\catalog\templates\catalog\statistics_column.html:70
+#: .\catalog\templates\R\factor_column.html:61
+#: .\catalog\templates\catalog\statistics_column.html:76
 msgid "Get Result"
 msgstr "Далее"
-
-#: .\catalog\templates\R\comp_result.html:20
-#: .\catalog\templates\R\cor_result.html:20
-#: .\catalog\templates\R\factor_result.html:20
-#: .\catalog\templates\R\jaccar_result.html:20
-#: .\catalog\templates\catalog\statistics_result.html:21
-msgid "Back"
-msgstr "Назад"
 
 #: .\catalog\templates\R\comp_result.html:30
 #: .\catalog\templates\R\cor_result.html:30
 #: .\catalog\templates\R\factor_result.html:30
+#: .\catalog\templates\R\groups_amount_result.html:30
 #: .\catalog\templates\R\jaccar_result.html:30
+#: .\catalog\templates\R\species_amount_result.html:30
 #: .\catalog\templates\catalog\statistics_result.html:32
 msgid "Result"
 msgstr "Результат"
@@ -173,6 +185,7 @@ msgstr "Результат"
 #: .\catalog\templates\R\cor_result.html:32
 #: .\catalog\templates\R\factor_result.html:32
 #: .\catalog\templates\R\jaccar_result.html:32
+#: .\catalog\templates\R\species_amount_result.html:32
 msgid "Download .txt"
 msgstr "Скачать .txt"
 
@@ -187,11 +200,19 @@ msgstr "Корреляционный анализ"
 msgid "Factor Analysis"
 msgstr "Факторный анализ"
 
+#: .\catalog\templates\R\groups_amount_result.html:17
+msgid "Groups"
+msgstr "Группы"
+
 #: .\catalog\templates\R\jaccar.html:20
 #: .\catalog\templates\R\jaccar_result.html:17
-#: .\catalog\templates\catalog\statistics.html:135
+#: .\catalog\templates\catalog\statistics.html:113
 msgid "The Jacquard method"
 msgstr "Метод Жаккара"
+
+#: .\catalog\templates\R\species_amount_result.html:17
+msgid "Species"
+msgstr "Виды"
 
 #: .\catalog\templates\catalog\about.html:27
 msgid "The Arctic Vegetation Archive (AVA)"
@@ -209,19 +230,21 @@ msgstr ""
 msgid ""
 "The goal of AVA is to unite and standardize vegetation data from the Arctic "
 "that will give researchers a unique opportunity to analyze vegetation at pan-"
-"arctic scale. The initiative is endorsed by the Conservation of Arctic Flora "
-"and Fauna of the Arctic Council"
+"arctic scale. The initiative is endorsed by"
 msgstr ""
 "Цель AVA – объединить и стандартизировать разрозненные данные, собранные в "
-"разные годы специалистами-геоботаниками. Инициатива одобрена Рабочей группой "
-"по сохранению арктической флоры и фауны "
+"разные годы специалистами-геоботаниками. Инициатива одобрена"
 
 #: .\catalog\templates\catalog\about.html:27
-msgid "link"
-msgstr "ссылка"
+msgid "the Conservation of Arctic Flora and Fauna of the Arctic Council"
+msgstr "Рабочей группой по сохранению арктической флоры и фауны"
 
 #: .\catalog\templates\catalog\about.html:27
-msgid "and the International Arctic Science Committee"
+msgid "and"
+msgstr "и"
+
+#: .\catalog\templates\catalog\about.html:27
+msgid "the International Arctic Science Committee"
 msgstr "и Международным арктическим научным комитетом"
 
 #: .\catalog\templates\catalog\about.html:30
@@ -523,47 +546,23 @@ msgstr "Здесь вы можете изменить ваши данные"
 msgid "Save changes"
 msgstr "Сохранить"
 
-#: .\catalog\templates\catalog\statistics.html:16
+#: .\catalog\templates\catalog\statistics.html:29
 msgid "AVA Data Dictionary"
 msgstr "Cловарь данных AVA"
 
-#: .\catalog\templates\catalog\statistics.html:18
+#: .\catalog\templates\catalog\statistics.html:31
 msgid "The dictionary contains a transcript of the names in the datasets"
 msgstr "Словарь содержит пояснения к наименованиям в датасетах."
 
-#: .\catalog\templates\catalog\statistics.html:20
+#: .\catalog\templates\catalog\statistics.html:33
 msgid "Download"
 msgstr "Скачать"
 
-#: .\catalog\templates\catalog\statistics.html:32
-#: .\catalog\templates\catalog\statistics_column.html:20
-#: .\catalog\templates\catalog\statistics_result.html:18
-#: .\mysite\templates\base.html:51
-msgid "Statistics"
-msgstr "Статистика"
-
-#: .\catalog\templates\catalog\statistics.html:34
-msgid "Select dataset"
-msgstr "Выберите датасет"
-
-#: .\catalog\templates\catalog\statistics.html:37
-#: .\catalog\templates\catalog\statistics_column.html:25
-msgid "Options"
-msgstr "Параметры"
-
-#: .\catalog\templates\catalog\statistics.html:82
-msgid "Analytics"
-msgstr "Аналитика"
-
-#: .\catalog\templates\catalog\statistics.html:83
-msgid "Select analysis type"
-msgstr "Выберите тип анализа"
-
-#: .\catalog\templates\catalog\statistics.html:98
+#: .\catalog\templates\catalog\statistics.html:76
 msgid "Correlation analysis"
 msgstr "Корреляционный анализ"
 
-#: .\catalog\templates\catalog\statistics.html:99
+#: .\catalog\templates\catalog\statistics.html:77
 msgid ""
 "Correlation analysis is a statistical method used to evaluate the strength "
 "of relationship between two quantitative variables."
@@ -571,28 +570,28 @@ msgstr ""
 "Метод обработки статистических данных, заключающийся в изучении "
 "коэффициентов корреляции между переменными."
 
+#: .\catalog\templates\catalog\statistics.html:78
+#: .\catalog\templates\catalog\statistics.html:89
 #: .\catalog\templates\catalog\statistics.html:100
 #: .\catalog\templates\catalog\statistics.html:111
-#: .\catalog\templates\catalog\statistics.html:122
-#: .\catalog\templates\catalog\statistics.html:133
 msgid "Type of analysis"
 msgstr "Тип анализа"
 
-#: .\catalog\templates\catalog\statistics.html:100
+#: .\catalog\templates\catalog\statistics.html:78
 msgid "Correlation"
 msgstr "Корреляционный"
 
+#: .\catalog\templates\catalog\statistics.html:80
+#: .\catalog\templates\catalog\statistics.html:91
 #: .\catalog\templates\catalog\statistics.html:102
-#: .\catalog\templates\catalog\statistics.html:113
-#: .\catalog\templates\catalog\statistics.html:124
 msgid "Get Analysis"
 msgstr "Провести анализ"
 
-#: .\catalog\templates\catalog\statistics.html:109
+#: .\catalog\templates\catalog\statistics.html:87
 msgid "Principal component analysis"
 msgstr "Метод главных компонентов"
 
-#: .\catalog\templates\catalog\statistics.html:110
+#: .\catalog\templates\catalog\statistics.html:88
 msgid ""
 "Principal component analysis is the process of computing the principal "
 "components and using them to perform a change of basis on the data, "
@@ -602,11 +601,11 @@ msgstr ""
 "Один из основных способов уменьшить размерность данных, потеряв наименьшее "
 "количество информации."
 
-#: .\catalog\templates\catalog\statistics.html:120
+#: .\catalog\templates\catalog\statistics.html:98
 msgid "Factor analysis"
 msgstr "Факторный анализ"
 
-#: .\catalog\templates\catalog\statistics.html:121
+#: .\catalog\templates\catalog\statistics.html:99
 msgid ""
 "A multidimensional method used to study the relationships between the values "
 "of variables"
@@ -614,28 +613,47 @@ msgstr ""
 "Метод обработки статистических данных, заключающийся в изучении "
 "коэффициентов корреляции между переменными."
 
-#: .\catalog\templates\catalog\statistics.html:122
+#: .\catalog\templates\catalog\statistics.html:100
 msgid "Factor"
 msgstr "Факторный"
 
-#: .\catalog\templates\catalog\statistics.html:131
+#: .\catalog\templates\catalog\statistics.html:109
 msgid "Cluster analysis"
 msgstr "Кластерный анализ"
 
-#: .\catalog\templates\catalog\statistics.html:132
+#: .\catalog\templates\catalog\statistics.html:110
 msgid ""
 "A multidimensional statistical procedure that collects data that contains "
 "information about a selection of objects, and then organizes the objects "
 "into relatively homogeneous groups"
-msgstr "Многомерная статистическая процедура, выполняющая сбор данных, содержащих информацию о выборке объектов, и затем упорядочивающая объекты в сравнительно однородные группы."
+msgstr ""
+"Многомерная статистическая процедура, выполняющая сбор данных, содержащих "
+"информацию о выборке объектов, и затем упорядочивающая объекты в "
+"сравнительно однородные группы."
 
-#: .\catalog\templates\catalog\statistics.html:133
+#: .\catalog\templates\catalog\statistics.html:111
 msgid "Cluster"
 msgstr "Кластерный"
+
+#: .\catalog\templates\catalog\statistics.html:122
+#, fuzzy
+#| msgid "Available columns"
+msgid "Available groups"
+msgstr "Доступные столбцы"
+
+#: .\catalog\templates\catalog\statistics_column.html:20
+#: .\catalog\templates\catalog\statistics_result.html:18
+#: .\mysite\templates\base.html:51
+msgid "Statistics"
+msgstr "Статистика"
 
 #: .\catalog\templates\catalog\statistics_column.html:22
 msgid "Select options from the list"
 msgstr "Выберите параметры из списка"
+
+#: .\catalog\templates\catalog\statistics_column.html:25
+msgid "Options"
+msgstr "Параметры"
 
 #: .\catalog\templates\catalog\statistics_column.html:35
 msgid "Available parameters"
@@ -645,7 +663,7 @@ msgstr "Доступные параметры"
 msgid "Genus"
 msgstr "Род"
 
-#: .\catalog\templates\catalog\statistics_column.html:61
+#: .\catalog\templates\catalog\statistics_column.html:64
 msgid "Moisture"
 msgstr "Влажность"
 
@@ -825,3 +843,18 @@ msgstr ""
 #: .\mysite\templates\object_list.html:42
 msgid "Search"
 msgstr "Поиск.."
+
+#~ msgid "The minimum password length is 5 symbols!"
+#~ msgstr "Минимальная длина пароля 5 символов!"
+
+#~ msgid "link"
+#~ msgstr "ссылка"
+
+#~ msgid "Select dataset"
+#~ msgstr "Выберите датасет"
+
+#~ msgid "Analytics"
+#~ msgstr "Аналитика"
+
+#~ msgid "Select analysis type"
+#~ msgstr "Выберите тип анализа"
