@@ -1,11 +1,11 @@
-.feedback{
 
-        position:fixed;
-        right: 10px;
-        top:168px;
+.feedback{
+        position:absolute;
+        right: 0px;
+        top:80px;
         width: 320px;
         padding: 10px;
         background-color: #3B3B3B;
-        border-radius: 12px;
+        border-bottom-left-radius: 12px;
         color: white;
 }

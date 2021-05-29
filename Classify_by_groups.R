@@ -38,11 +38,11 @@ if (plantsFromSppTable[i] %in% vascular == T) numOfVascular = numOfVascular + 1
   i = i + 1
 }
 
-cat("Plants in dataset:", length(plantsFromSppTable), 
-    "\nVascular plants:", numOfVascular, 
-    "\nMoss plants:", numOfMoss, 
-    "\nLiverwort plants:", numOfLiverwort,
-    "\nLichen plants:", numOfLichen,
+cat("Plant species in dataset:", length(plantsFromSppTable),
+    "\nVascular plants:", numOfVascular,
+    "\nMoss:", numOfMoss,
+    "\nLiverwort:", numOfLiverwort,
+    "\nLichen:", numOfLichen,
     "\nUnknow plants:", numOfUnknow)
 
 total <- numOfVascular+numOfMoss+numOfLiverwort+numOfLichen+numOfUnknow

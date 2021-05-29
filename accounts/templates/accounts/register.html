@@ -1,4 +1,6 @@
-{% load i18n %}
+{% extends "base.html" %}
+{% load i18n %}{% load cms_tags menu_tags sekizai_tags %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 
@@ -13,9 +15,7 @@
 		html {
 			margin: 0;
 			padding: 0;
-			height: 100%;
-			background-image: url('../../../media/pictures/Parisento-Lake.jpg');
-			background-size: cover;
+			height: calc(100vh - 200px);
 		}
 		.user_card {
 			width: 350px;
@@ -129,13 +129,19 @@
 <script>
 
 	var form_fields = document.getElementsByTagName('input')
-	form_fields[1].placeholder='{{ the_register_name }}';
-	form_fields[2].placeholder='{{ the_email_name }}';
-	form_fields[3].placeholder='{{ the_password_name }}';
-	form_fields[4].placeholder='{{ the_repassword_name }}';
+	form_fields[2].placeholder='{{ the_register_name }}';
+	form_fields[3].placeholder='{{ the_email_name }}';
+	form_fields[4].placeholder='{{ the_password_name }}';
+	form_fields[5].placeholder='{{ the_repassword_name }}';
 	for (var field in form_fields){
 		form_fields[field].className += ' form-control'
 	}
 </script>
 </body>
+<footer class="mastfoot text-center">
+	{% static_placeholder "Footer" %}
+	<p>{% trans "Designed for" %} <a href="http://www.ras.ru/">{% trans "The Russian Academy of Sciences" %}</a>  {% trans "by" %} <a href="https://cabinet.miem.hse.ru/#/project/1">{% trans "MIEM HSE" %}</a></p>
+	<p>{% trans "Supported by" %} RFBR 18-04-01010</p>
+</footer>
 </html>
+{% endblock content %}

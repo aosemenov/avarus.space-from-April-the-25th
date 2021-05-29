@@ -1,8 +1,2 @@
 Dataset: datasets/modsrc/new_yava_Bovan_ksermokhina_2005_spp_modsrc.xlsx
-Plants in dataset: 177 
-Vascular plants: 86 
-Moss plants: 40 
-Liverwort plants: 3 
-Lichen plants: 37 
-Unknow plants: 11
-All plants classifed
+Системе не удается найти указанный путь.

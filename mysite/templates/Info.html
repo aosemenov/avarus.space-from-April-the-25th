@@ -1,13 +1,8 @@
 {% extends "base.html" %}
 
 {% load cms_tags %}
-
 {% block content %}
-
-
-
 {% placeholder "content" %}
-
 <div id="feedback" class="feedback" >
   <form action="{% url 'feedback_view' %}" method='POST'>
     {% csrf_token %}
@@ -63,7 +58,7 @@ Enter Position">
 
     <div class="form-group">
       <label form="Description1">Purpose*</label>
-      <textarea name="description" class="form-control" onkeyup="checkParams()" id="Description1" rows="5" placeholder="Describe specific plans for using the data..."></textarea>
+      <textarea name="description" class="form-control" onkeyup="checkParams()" id="Description1" rows="3" placeholder="Describe specific plans for using the data..."></textarea>
       <!--        <input  name="description" class="form-control" aria-describedby="emailHelp" placeholder="Enter Description">-->
 
     </div>
@@ -71,9 +66,6 @@ Enter Position">
   </form>
 
 </div>
-
-
-
 {% endblock content %}
 
 

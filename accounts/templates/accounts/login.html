@@ -1,5 +1,7 @@
+
+{% extends "base.html" %}
 {% load cms_tags menu_tags sekizai_tags %} {% load i18n %}
-<!DOCTYPE html>
+{% block content %}
 <html>
 
 <head>
@@ -14,9 +16,7 @@
 		html {
 			margin: 0;
 			padding: 0;
-			height: 100%;
-			background-image: url('../../../media/pictures/Parisento-Lake.jpg');
-			background-size: cover;
+			height: calc(100vh - 200px);
 		}
 		.user_card {
 			width: 350px;
@@ -135,5 +135,10 @@
 	</div>
 </div>
 </body>
-
+<footer class="mastfoot text-center">
+    {% static_placeholder "Footer" %}
+    <p>{% trans "Designed for" %} <a href="http://www.ras.ru/">{% trans "The Russian Academy of Sciences" %}</a>  {% trans "by" %} <a href="https://cabinet.miem.hse.ru/#/project/1">{% trans "MIEM HSE" %}</a></p>
+    <p>{% trans "Supported by" %} RFBR 18-04-01010</p>
+</footer>
 </html>
+{% endblock content %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-27 00:37+0300\n"
+"POT-Creation-Date: 2021-05-29 01:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgstr "Введите пароль..."
 
 #: .\accounts\templates\accounts\login.html:119
 #: .\accounts\templates\accounts\register.html:118
-#: .\mysite\templates\base.html:70
+#: .\mysite\templates\base.html:71
 msgid "Sign In"
 msgstr "Войти"
 
@@ -61,6 +61,40 @@ msgstr "Вернуться на главную страницу?"
 #: .\catalog\templates\catalog\statistics_result.html:21
 msgid "Back"
 msgstr "Назад"
+
+#: .\accounts\templates\accounts\login.html:140
+#: .\accounts\templates\accounts\register.html:143
+#: .\catalog\templates\catalog\about.html:142
+#: .\mysite\templates\object_list.html:58
+msgid "Designed for"
+msgstr "Разработано для"
+
+#: .\accounts\templates\accounts\login.html:140
+#: .\accounts\templates\accounts\register.html:143
+#: .\catalog\templates\catalog\about.html:142
+#: .\mysite\templates\object_list.html:58
+msgid "The Russian Academy of Sciences"
+msgstr "Российской академии наук"
+
+#: .\accounts\templates\accounts\login.html:140
+#: .\accounts\templates\accounts\register.html:143
+#: .\catalog\templates\catalog\about.html:142
+#: .\mysite\templates\object_list.html:58
+msgid "by"
+msgstr "от"
+
+#: .\accounts\templates\accounts\login.html:140
+#: .\accounts\templates\accounts\register.html:143
+#: .\mysite\templates\object_list.html:58
+msgid "MIEM HSE"
+msgstr "МИЭМ НИУ ВШЭ"
+
+#: .\accounts\templates\accounts\login.html:141
+#: .\accounts\templates\accounts\register.html:144
+#: .\catalog\templates\catalog\about.html:142
+#: .\mysite\templates\object_list.html:59
+msgid "Supported by"
+msgstr "При поддержке"
 
 #: .\accounts\templates\accounts\register.html:79
 msgid "REGISTER ACCOUNT"
@@ -88,7 +122,7 @@ msgstr "Повторите пароль..."
 
 #: .\accounts\views.py:23
 msgid "Password must be more than 5 symbols!"
-msgstr ""
+msgstr "Пароль должен содержать больше 5 символов"
 
 #: .\accounts\views.py:27
 msgid "The passwords are different!"
@@ -160,7 +194,7 @@ msgstr "Доступные столбцы"
 #: .\catalog\templates\R\cor_column.html:36
 #: .\catalog\templates\R\factor_column.html:36
 #: .\catalog\templates\catalog\statistics_column.html:37
-#: .\mysite\templates\object_list.html:20
+#: .\mysite\templates\object_list.html:19
 msgid "Search "
 msgstr "Поиск.."
 
@@ -211,8 +245,9 @@ msgid "The Jacquard method"
 msgstr "Метод Жаккара"
 
 #: .\catalog\templates\R\species_amount_result.html:17
-msgid "Species"
-msgstr "Виды"
+
+msgid "Species richness"
+msgstr "Видовое богатство"
 
 #: .\catalog\templates\catalog\about.html:27
 msgid "The Arctic Vegetation Archive (AVA)"
@@ -297,7 +332,7 @@ msgstr "Ксения Ермохина"
 
 #: .\catalog\templates\catalog\about.html:62
 msgid "A.N. Severtsov Institute of Ecology and Evolution RAS, Moscow"
-msgstr "Институт проблем экологии и эволюции им. А.Н. Северцова, Москва"
+msgstr "Институт проблем экологии и эволюции им. А.Н. Северцова РАН, Москва"
 
 #: .\catalog\templates\catalog\about.html:68
 msgid "Maria Kurysheva"
@@ -306,7 +341,8 @@ msgstr "Мария Курышева"
 #: .\catalog\templates\catalog\about.html:69
 #: .\catalog\templates\catalog\about.html:83
 msgid "HSE Tikhonov Moscow Institute of Electronics and Mathematics, Moscow"
-msgstr "Московский государственный институт электроники и математики, Москва"
+msgstr ""
+"НИУ ВШЭ, Московский государственный институт электроники и математики, Москва"
 
 #: .\catalog\templates\catalog\about.html:75
 msgid "Vitalii Zemlianskii"
@@ -316,7 +352,9 @@ msgstr "Виталий Землянский"
 msgid ""
 "University of Zurich, Department of Evolutionary Biology and Environmental "
 "Studies, Zurich"
-msgstr "Кафедра эволюционной биологии и экологических исследований, Цюрих"
+msgstr ""
+"Цюрихский университет, Кафедра эволюционной биологии и экологических "
+"исследований, Цюрих"
 
 #: .\catalog\templates\catalog\about.html:82
 msgid "Denis Korolev"
@@ -334,13 +372,13 @@ msgstr ""
 "вместе."
 
 #: .\catalog\templates\catalog\about.html:110
-#: .\catalog\templates\catalog\index.html:91
+#: .\catalog\templates\catalog\index.html:92
 msgid "Name"
 msgstr "Имя"
 
 #: .\catalog\templates\catalog\about.html:114
 #: .\catalog\templates\catalog\datasets_requests.html:45
-#: .\catalog\templates\catalog\index.html:81
+#: .\catalog\templates\catalog\index.html:82
 msgid "Email"
 msgstr "Почта"
 
@@ -354,36 +392,15 @@ msgid "Submit"
 msgstr "Отправить"
 
 #: .\catalog\templates\catalog\about.html:142
-#: .\mysite\templates\object_list.html:59
-msgid "Designed for"
-msgstr "Разработано для"
-
-#: .\catalog\templates\catalog\about.html:142
-#: .\mysite\templates\object_list.html:59
-msgid "The Russian Academy of Sciences"
-msgstr "Российской академии наук"
-
-#: .\catalog\templates\catalog\about.html:142
-#: .\mysite\templates\object_list.html:59
-msgid "by"
-msgstr "от"
-
-#: .\catalog\templates\catalog\about.html:142
-#: .\mysite\templates\object_list.html:59
 msgid "MIEM"
-msgstr "МИЭМ"
-
-#: .\catalog\templates\catalog\about.html:142
-#: .\mysite\templates\object_list.html:60
-msgid "Supported by"
-msgstr "При поддержке"
+msgstr "МИЭМ НИУ ВШЭ"
 
 #: .\catalog\templates\catalog\book_detail.html:13
 #: .\catalog\templates\catalog\book_list.html:13
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:18
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:21
 #: .\catalog\templates\catalog\datasets_requests.html:20
-#: .\catalog\templates\catalog\index.html:18
+#: .\catalog\templates\catalog\index.html:19
 msgid "HOME"
 msgstr "ГЛАВНАЯ"
 
@@ -392,7 +409,7 @@ msgstr "ГЛАВНАЯ"
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:19
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:22
 #: .\catalog\templates\catalog\datasets_requests.html:21
-#: .\catalog\templates\catalog\index.html:19
+#: .\catalog\templates\catalog\index.html:20
 msgid "Profile"
 msgstr "Профиль"
 
@@ -401,7 +418,7 @@ msgstr "Профиль"
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:20
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:23
 #: .\catalog\templates\catalog\datasets_requests.html:22
-#: .\catalog\templates\catalog\index.html:20
+#: .\catalog\templates\catalog\index.html:21
 msgid "RECEIVED DATASETS"
 msgstr "ДАТАСЕТЫ"
 
@@ -410,7 +427,7 @@ msgstr "ДАТАСЕТЫ"
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:21
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:24
 #: .\catalog\templates\catalog\datasets_requests.html:23
-#: .\catalog\templates\catalog\index.html:21
+#: .\catalog\templates\catalog\index.html:22
 #: .\mysite\templates\instructions.html:56
 msgid "My datasets"
 msgstr "Мои датасеты"
@@ -420,7 +437,7 @@ msgstr "Мои датасеты"
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:22
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:25
 #: .\catalog\templates\catalog\datasets_requests.html:24
-#: .\catalog\templates\catalog\index.html:22
+#: .\catalog\templates\catalog\index.html:23
 #: .\mysite\templates\instructions.html:59
 msgid "My requests"
 msgstr "Мои запросы"
@@ -430,7 +447,7 @@ msgstr "Мои запросы"
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:23
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:26
 #: .\catalog\templates\catalog\datasets_requests.html:25
-#: .\catalog\templates\catalog\index.html:23
+#: .\catalog\templates\catalog\index.html:24
 msgid "LOGOUT"
 msgstr "АККАУНТ"
 
@@ -439,7 +456,7 @@ msgstr "АККАУНТ"
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:24
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:27
 #: .\catalog\templates\catalog\datasets_requests.html:26
-#: .\catalog\templates\catalog\index.html:24
+#: .\catalog\templates\catalog\index.html:25
 msgid "Exit"
 msgstr "Выйти"
 
@@ -448,7 +465,7 @@ msgstr "Выйти"
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:27
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:30
 #: .\catalog\templates\catalog\datasets_requests.html:29
-#: .\catalog\templates\catalog\index.html:27
+#: .\catalog\templates\catalog\index.html:28
 msgid "STAFF"
 msgstr "СОТРУДНИКАМ"
 
@@ -457,7 +474,7 @@ msgstr "СОТРУДНИКАМ"
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:28
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:31
 #: .\catalog\templates\catalog\datasets_requests.html:30
-#: .\catalog\templates\catalog\index.html:28
+#: .\catalog\templates\catalog\index.html:29
 msgid "All datasets"
 msgstr "Все датасеты"
 
@@ -466,7 +483,7 @@ msgstr "Все датасеты"
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:29
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:32
 #: .\catalog\templates\catalog\datasets_requests.html:31
-#: .\catalog\templates\catalog\index.html:29
+#: .\catalog\templates\catalog\index.html:30
 msgid "All borrowed"
 msgstr "Выдачи"
 
@@ -514,37 +531,52 @@ msgstr "Статус"
 msgid "There are no requests"
 msgstr "Нет активных запросов"
 
-#: .\catalog\templates\catalog\index.html:40
+#: .\catalog\templates\catalog\index.html:41
 msgid "Welcome"
 msgstr "Добро пожаловать"
 
-#: .\catalog\templates\catalog\index.html:49
+#: .\catalog\templates\catalog\index.html:50
 msgid "About "
 msgstr "Данные"
 
-#: .\catalog\templates\catalog\index.html:52
+#: .\catalog\templates\catalog\index.html:53
 msgid "Edit"
 msgstr "Редактировать"
 
-#: .\catalog\templates\catalog\index.html:70
+#: .\catalog\templates\catalog\index.html:71
 msgid "Login"
 msgstr "Логин"
 
-#: .\catalog\templates\catalog\index.html:101
+#: .\catalog\templates\catalog\index.html:102
 msgid "Organization"
 msgstr "Организация"
 
-#: .\catalog\templates\catalog\index.html:111
+#: .\catalog\templates\catalog\index.html:112
 msgid "Position"
 msgstr "Должность"
 
-#: .\catalog\templates\catalog\index.html:120
+#: .\catalog\templates\catalog\index.html:121
 msgid "You can edit your account using the following form"
 msgstr "Здесь вы можете изменить ваши данные"
 
-#: .\catalog\templates\catalog\index.html:145
+#: .\catalog\templates\catalog\index.html:146
 msgid "Save changes"
 msgstr "Сохранить"
+
+#: .\catalog\templates\catalog\statistics.html:23
+#: .\catalog\templates\catalog\statistics_column.html:20
+#: .\catalog\templates\catalog\statistics_result.html:18
+#: .\mysite\templates\base.html:52
+msgid "Statistics"
+msgstr "Статистика"
+
+#: .\catalog\templates\catalog\statistics.html:24
+msgid "Analytics"
+msgstr "Аналитика"
+
+#: .\catalog\templates\catalog\statistics.html:25
+msgid "Species analysis"
+msgstr "Видовой анализ"
 
 #: .\catalog\templates\catalog\statistics.html:29
 msgid "AVA Data Dictionary"
@@ -636,16 +668,8 @@ msgid "Cluster"
 msgstr "Кластерный"
 
 #: .\catalog\templates\catalog\statistics.html:122
-#, fuzzy
-#| msgid "Available columns"
 msgid "Available groups"
-msgstr "Доступные столбцы"
-
-#: .\catalog\templates\catalog\statistics_column.html:20
-#: .\catalog\templates\catalog\statistics_result.html:18
-#: .\mysite\templates\base.html:51
-msgid "Statistics"
-msgstr "Статистика"
+msgstr "Доступные группы"
 
 #: .\catalog\templates\catalog\statistics_column.html:22
 msgid "Select options from the list"
@@ -691,15 +715,15 @@ msgstr ""
 msgid "RU"
 msgstr ""
 
-#: .\mysite\templates\base.html:41
+#: .\mysite\templates\base.html:42
 msgid "Main"
 msgstr "Главная"
 
-#: .\mysite\templates\base.html:44
+#: .\mysite\templates\base.html:45
 msgid "About Us"
 msgstr "О нас"
 
-#: .\mysite\templates\base.html:47
+#: .\mysite\templates\base.html:48
 msgid "Instructions"
 msgstr "Инструкции"
 
@@ -818,7 +842,7 @@ msgstr ""
 
 #: .\mysite\templates\instructions.html:78
 msgid "The analysis is carried out in two stages"
-msgstr "Анализ проводится в этапа"
+msgstr "Анализ проводится в 2 этапа"
 
 #: .\mysite\templates\instructions.html:79
 msgid "Select a dataset"
@@ -840,9 +864,12 @@ msgstr ""
 "Если у вас остались вопросы, вы всегда можете заполнить форму обратной связи "
 "на странице <b>О нас</b>"
 
-#: .\mysite\templates\object_list.html:42
+#: .\mysite\templates\object_list.html:41
 msgid "Search"
 msgstr "Поиск.."
+
+#~ msgid "Species"
+#~ msgstr "Виды"
 
 #~ msgid "The minimum password length is 5 symbols!"
 #~ msgstr "Минимальная длина пароля 5 символов!"
@@ -852,9 +879,6 @@ msgstr "Поиск.."
 
 #~ msgid "Select dataset"
 #~ msgstr "Выберите датасет"
-
-#~ msgid "Analytics"
-#~ msgstr "Аналитика"
 
 #~ msgid "Select analysis type"
 #~ msgstr "Выберите тип анализа"

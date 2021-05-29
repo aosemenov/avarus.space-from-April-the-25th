@@ -20,9 +20,9 @@
                 col-lg-3">
                 <div class="card">
                     <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Statistics</button>
-                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Analytics</button>
-                        <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Species analysis</button>
+                        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">{% trans "Statistics" %}</button>
+                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">{% trans "Analytics" %}</button>
+                        <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">{% trans "Species analysis" %}</button>
                     </div>
                     <hr>
                     <div class="card-body">
@@ -125,7 +125,19 @@
                                 <div class="list-group statistics-lst" style="overflow-y:scroll; overflow-x:hidden">
                                     <label class="list-group-item ">
                                         <input class="form-check-input me-1" name="group" type="radio"
-                                               value="Moss" checked>Moss
+                                               value="Total_plants" checked>Total plants species
+                                    </label>
+                                    <label class="list-group-item ">
+                                        <input class="form-check-input me-1" name="group" type="radio"
+                                               value="Vascular">Vascular plants
+                                    </label>
+                                    <label class="list-group-item ">
+                                        <input class="form-check-input me-1" name="group" type="radio"
+                                               value="Moss">Mosses
+                                    </label>
+                                    <label class="list-group-item ">
+                                        <input class="form-check-input me-1" name="group" type="radio"
+                                               value="Liverwort">Liverworts
                                     </label>
                                     <label hidden class="list-group-item ">
                                         <input  class="form-check-input me-1" name="dataset" type="radio" checked
@@ -133,23 +145,11 @@
                                     </label>
                                     <label class="list-group-item ">
                                         <input class="form-check-input me-1" name="group" type="radio"
-                                               value="Total_plants">Total plants
+                                               value="Lichen">Lichens
                                     </label>
                                     <label class="list-group-item ">
                                         <input class="form-check-input me-1" name="group" type="radio"
-                                               value="Vascular">Vascular
-                                    </label>
-                                    <label class="list-group-item ">
-                                        <input class="form-check-input me-1" name="group" type="radio"
-                                               value="Liverwort">Liverwort
-                                    </label>
-                                    <label class="list-group-item ">
-                                        <input class="form-check-input me-1" name="group" type="radio"
-                                               value="Unknow">Unknow
-                                    </label>
-                                    <label class="list-group-item ">
-                                        <input class="form-check-input me-1" name="group" type="radio"
-                                               value="Lichen">Lichen
+                                               value="Unknow">Unknown group
                                     </label>
                                 </div>
                                 <button type="submit" value="Submit" class="btn btn-outline-primary mt-5">{% trans "Continue" %}</button>

@@ -1,18 +1,16 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, print_function, unicode_literals
 from cms.sitemaps import CMSSitemap
-from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.views.static import serve
 from django.urls import path, include
 from django.contrib import admin
 from django.urls import re_path
 from django.views.i18n import JavaScriptCatalog
+from django.conf import settings
 from django.conf.urls.static import static
-
 
 admin.autodiscover()
 
@@ -35,11 +33,6 @@ urlpatterns += [
     path('', include('accounts.urls')),
     path('profile/', include('catalog.urls'))
 ]
-
-
-
-from django.conf import settings
-from django.conf.urls.static import static
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 if settings.DEBUG:

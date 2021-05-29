@@ -9,11 +9,10 @@ function init() {
             zoom: 5,
             controls: ['zoomControl'],
             behaviors: ['drag', 'scrollZoom'],
-            type: 'yandex#satellite'
+            type: 'yandex#satellite',
         },
         {
             searchControlProvider: 'yandex#search',
-            autoPanMargin: 20,
         }),
 
         // Контейнер для меню.
@@ -51,10 +50,10 @@ function init() {
                     balloonContentFooter: item.ContentFooter.join(''),
                     // Зададим содержимое всплывающей подсказки.
                     hintContent: item.hint.join(''),
-                },
-                //     {
-                //     balloonPane: 'outerBalloon'
-                // }
+                },{
+                balloonPane: 'outerBalloon',
+                balloonShadowPane: 'shadows'
+                }
             );
 
         // Добавляем метку в коллекцию.S
@@ -63,16 +62,16 @@ function init() {
         submenuItem
             .appendTo(submenu)
             // При клике по пункту подменю открываем/закрываем баллун у метки.
-            .find('a')
+            .bind('click', function () {
+                map.panTo([item.center[0], item.center[1]], {flying: true, duration: 800})
+                return false;
+            })
             .bind('click', function () {
                 if (!placemark.balloon.isOpen()) {
                     placemark.balloon.open();
                 }
             })
-            .bind('click', function () {
-                map.panTo([item.center[0]+2.5, item.center[1]], {flying: 6, duration: 1500})
-                return false;
-            })
+
         document.querySelector('#elastic').oninput = function () {
             let val = this.value.trim();
             let elasticItems = document.querySelectorAll('.subItem');
