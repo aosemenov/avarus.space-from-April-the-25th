@@ -13,7 +13,6 @@
     * [Запуск проекта](#Запуск-проекта)
 * [Эксплуатация](#Эксплуатация)
     * [Основные модули](#Основные-модули)
-    * [Базы данных](#Базы-данных)
     * [Многоязычность сайта](#Многоязычность-сайта)
     * [Распределение прав доступа](#Распределение-прав-доступа)
 
@@ -51,39 +50,6 @@ python manage.py runserver
 1. mysite/accounts 
 2. mysite/catalog
 
-### Базы данных
-
-В файле mysite/settings.py находятся основные конфигурации проекта. 
-В разделе DATABASES подключены SQLite3 и PostgreSQL.
-```
-DATABASES = {
-    'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': '',
-
-    },
-    'users': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'localhost',
-        'NAME': 'ava2',
-        'PASSWORD': 'pjkjnjtz,kjrj',
-        'PORT': '5432',
-        'USER': 'postgres',
-    }
-}
-```
-Основной базой данных является sqlite3. Базой данных для продакшен версии является postgresql, она содержит информацию о модулях admin, auth и catalog.
-Для синхронизации баз данных используются следуюзие команды:
-```
-python manage.py migrate auth --database=users
-python manage.py migrate admin --database=users
-python manage.py migrate catalog --database=users
-```
 ### Многоязычность сайта
 
 Для создания перевода в шаблонах html используются следующие теги:
