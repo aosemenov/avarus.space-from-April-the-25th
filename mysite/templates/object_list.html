@@ -30,20 +30,32 @@
     </div>
 </div>
 <div class="main">
-    <div class="container2">
-        <div id="map"></div>
-    </div>
-    <div class="resize">
-        <div class="menu_list" id="menu_list">
+    <div class="container3">
+        <div class="related">
+            <span class="related__text"><b>Related projects:</b>
+                <a class="related__text-link"
+                   href="https://drive.google.com/drive/folders/1UaFWzs3QyRorJx_ttvfc3MXgg8jC2SQe"
+                   target="_blank">Position of the boundary between the high and low Arctic in Western Siberia</a>
+            </span>
         </div>
     </div>
-    <div class="search-box">
-        {% trans "Search" as the_search %}
-        <input type="text" class="search-txt" id="elastic" placeholder="{{ the_search }}">
-        <a href="#" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
-    </div>
-    <div class="map-box">
-        <a href="" class="map-box-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+    <div class="container2">
+        <div id="map">
+
+        </div>
+        <div class="search-box">
+            {% trans "Search" as the_search %}
+            <input type="text" class="search-txt" id="elastic" placeholder="{{ the_search }}">
+            <a href="#" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+        </div>
+        <div class="map-box">
+            <a href="" class="map-box-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+        </div>
+        <div class="resize">
+            <div class="menu_list" id="menu_list">
+
+            </div>
+        </div>
     </div>
 </div>
 <input hidden value="{{ json_data }}" id="suy">

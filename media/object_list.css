@@ -9,6 +9,19 @@
 .hr1{
     margin-top:5px;
 }
+
+.related {
+    margin-top: 10px;
+}
+
+.related__text {
+    font-size: 14px;
+}
+
+.related__text-link {
+
+}
+
 .mastfoot{
     left: 0;
     bottom: 20px;
